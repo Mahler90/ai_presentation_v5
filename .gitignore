@@ -1,0 +1,14 @@
+# Local workspace files
+.claude/
+*claude-log*
+C:Users*
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Backup files
+archive/
+*.bak
+* - 복사본.html
