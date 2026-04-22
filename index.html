@@ -1574,10 +1574,12 @@
 </deck-stage>
 
 <script>
-  // 영상 재생 규약 (기본값)
+  // 영상 재생 규약 (v4/v6/v5 공통, 2026-04-22 갱신):
   // - 슬라이드 진입 시 **자동 재생 없음**. 첫 영상은 화면에 보이지만 0초 정지.
-  // - → / Space / PageDown / 우측 탭 / 다음 버튼 = 미재생 영상이 있으면 순서대로 재생.
-  //   첫 → = 첫 영상 재생 / 다음 → = 다음 영상 재생 / … / 더 없으면 다음 슬라이드.
+  // - 영상 2개 이상 슬라이드 — 영상 1개 당 → 2번:
+  //   첫 → = 현재 영상 재생 / 다음 → = 다음 영상 **0초 정지 상태로 표시** / 그 다음 → = 해당 영상 재생 / …
+  //   마지막 영상 재생 후 → = 다음 슬라이드.
+  // - 영상 1개 슬라이드 — → 한 번으로 재생, 한 번 더로 다음 슬라이드.
   // - 슬라이드 이탈 시 모든 영상 pause + 0초 리셋 (재진입 시 첫 영상부터 다시 수동 재생).
   (() => {
     const stage = document.querySelector('deck-stage');
@@ -1610,12 +1612,13 @@
       syncVidx(slide, idx);
     };
 
+    // 슬라이드 상태 · { idx: 현재 보이는 영상 index, played: 그 영상이 재생되었는가 }
     const enterSlide = (slide) => {
       if (!slide) return;
       const vids = getVideos(slide);
       if (!vids.length) { syncVidx(slide, 0); return; }
       showOnly(slide, vids, 0, { play: false });
-      slideState.set(slide, 0);
+      slideState.set(slide, { idx: 0, played: false });
     };
     const leaveSlide = (slide) => {
       if (!slide) return;
@@ -1625,12 +1628,14 @@
         v.style.display = (i === 0) ? '' : 'none';
       });
       syncVidx(slide, 0);
-      slideState.set(slide, 0);
+      slideState.set(slide, { idx: 0, played: false });
     };
 
-    // 현재 슬라이드에 아직 재생하지 않은 영상이 있으면 다음 영상을 재생 + true 반환.
-    // state = 지금까지 재생을 시작한 영상 개수 (0 = 아직 하나도 안 누름, N = 전부 소진).
-    // 키 repeat / 빠른 중복 호출을 막기 위해 500ms 디바운스.
+    // → 소비 로직:
+    //   현재 영상 미재생 → 재생 (played=true) · true 반환
+    //   현재 영상 재생됨 + 다음 영상 있음 → 다음 영상을 0초 정지 상태로 표시 (idx++, played=false) · true 반환
+    //   현재 영상 재생됨 + 다음 영상 없음 → false 반환 (다음 슬라이드로)
+    // 키 repeat / 빠른 중복 호출 차단용 500ms 디바운스.
     let lastConsume = 0;
     const consumeForward = () => {
       const now = Date.now();
@@ -1639,10 +1644,20 @@
       if (!slide) return false;
       const vids = getVideos(slide);
       if (!vids.length) return false;
-      const state = slideState.get(slide) ?? 0;
-      if (state >= vids.length) return false;
-      showOnly(slide, vids, state, { play: true });
-      slideState.set(slide, state + 1);
+      const st = slideState.get(slide) ?? { idx: 0, played: false };
+      if (!st.played) {
+        const v = vids[st.idx];
+        if (v) {
+          try { v.currentTime = 0; const p = v.play(); if (p && p.catch) p.catch(() => {}); } catch (e) {}
+        }
+        slideState.set(slide, { idx: st.idx, played: true });
+        lastConsume = now;
+        return true;
+      }
+      const nextIdx = st.idx + 1;
+      if (nextIdx >= vids.length) return false;
+      showOnly(slide, vids, nextIdx, { play: false });
+      slideState.set(slide, { idx: nextIdx, played: false });
       lastConsume = now;
       return true;
     };
