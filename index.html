@@ -1635,11 +1635,12 @@
     //   현재 영상 미재생 → 재생 (played=true) · true 반환
     //   현재 영상 재생됨 + 다음 영상 있음 → 다음 영상을 0초 정지 상태로 표시 (idx++, played=false) · true 반환
     //   현재 영상 재생됨 + 다음 영상 없음 → false 반환 (다음 슬라이드로)
-    // 키 repeat / 빠른 중복 호출 차단용 500ms 디바운스.
+    // 빠른 이중 클릭 방지 120ms 디바운스 (키 오토리피트는 keydown 에서 e.repeat 로 별도 차단).
+    // slidechange 시 lastConsume=0 으로 리셋 (슬라이드 경계 간섭 방지).
     let lastConsume = 0;
     const consumeForward = () => {
       const now = Date.now();
-      if (now - lastConsume < 500) return true; // 디바운스: 이벤트는 소비(슬라이드 넘어가지 않도록)
+      if (now - lastConsume < 120) return true; // 디바운스: 이벤트는 소비(슬라이드 넘어가지 않도록)
       const slide = stage._slides && stage._slides[stage._index];
       if (!slide) return false;
       const vids = getVideos(slide);
@@ -1666,11 +1667,14 @@
       const { slide, previousSlide } = (e.detail || {});
       leaveSlide(previousSlide);
       enterSlide(slide);
+      lastConsume = 0; // 슬라이드 경계에서 디바운스 리셋
     });
 
     // 1) 키보드 → / Space / PageDown: capture phase 에서 deck-stage 핸들러보다 먼저 소비.
+    //    키 오토리피트 (e.repeat) 는 무시해서 길게 눌러도 영상이 건너뛰지 않음.
     window.addEventListener('keydown', (e) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.repeat) return;
       const t = e.target;
       if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
       if (e.key !== 'ArrowRight' && e.key !== 'PageDown' && e.key !== ' ' && e.key !== 'Spacebar') return;
