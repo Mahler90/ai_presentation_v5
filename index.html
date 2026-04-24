@@ -1157,6 +1157,147 @@
   }
   .inputs-v1 .hub .out-items .oi .dot{ width:6px; height:6px; border-radius:50%; background:var(--a); flex-shrink:0; }
 
+  /* ── 5. INPUTS · V3 Stacked — 가로 3카드 → 수직 수렴 → Claude 허브 ── */
+  .inputs-v3{
+    flex:1; min-height:0; padding:20px 96px 64px;
+    display:flex; flex-direction:column; gap:18px;
+  }
+  .inputs-v3 .v3-row-lbl{
+    display:flex; align-items:center; gap:14px;
+    font-family:'JetBrains Mono',ui-monospace,monospace;
+    font-size:12px; letter-spacing:0.18em; color:var(--mute);
+    text-transform:uppercase; font-weight:500;
+  }
+  .inputs-v3 .v3-row-lbl .ln{ flex:1; height:1px; background:var(--line); }
+  .inputs-v3 .v3-row-lbl .tx{ color:var(--ink-2); font-weight:600; }
+
+  .inputs-v3 .v3-row{
+    display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px;
+  }
+  .inputs-v3 .v3-card{
+    position:relative; padding:28px 28px 26px;
+    background:#fff; border:1px solid var(--line);
+    border-radius:3px;
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .inputs-v3 .v3-card::before{
+    content:''; position:absolute; top:0; left:0; right:0; height:3px;
+    background:var(--a);
+  }
+  .inputs-v3 .v3-head{
+    display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+    padding-bottom:10px; border-bottom:1px solid var(--line-2);
+  }
+  .inputs-v3 .v3-idx{
+    font-family:'Fraunces',serif; font-weight:400;
+    font-size:56px; line-height:0.9; letter-spacing:-0.02em;
+    color:var(--ink); font-variation-settings:'opsz' 144;
+    font-variant-numeric:tabular-nums;
+  }
+  .inputs-v3 .v3-tag{
+    font-family:'JetBrains Mono',ui-monospace,monospace;
+    font-size:12px; letter-spacing:0.16em; color:var(--a);
+    text-transform:uppercase; font-weight:600;
+    padding:5px 10px; background:var(--a-soft); border-radius:2px;
+  }
+  .inputs-v3 .v3-title{
+    font-size:26px; line-height:1.2; letter-spacing:-0.02em;
+    font-weight:600; color:var(--ink);
+  }
+  .inputs-v3 .v3-desc{
+    font-size:16px; line-height:1.55; color:var(--ink-2);
+  }
+  .inputs-v3 .v3-desc b{ color:var(--ink); font-weight:600; }
+  .inputs-v3 .v3-pips{
+    display:flex; flex-wrap:wrap; gap:6px; margin-top:auto;
+  }
+  .inputs-v3 .v3-pip{
+    font-family:'JetBrains Mono',ui-monospace,monospace;
+    font-size:12px; letter-spacing:0.04em; color:var(--ink-2);
+    padding:6px 10px; background:var(--paper-2); border-radius:2px;
+  }
+  .inputs-v3 .v3-pip b{ color:var(--ink); font-weight:600; }
+
+  .inputs-v3 .v3-converge{
+    position:relative; height:96px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .inputs-v3 .v3-converge .v3-curves{
+    position:absolute; inset:0; width:100%; height:100%; overflow:visible;
+  }
+  .inputs-v3 .v3-converge .v3-cdot{
+    position:absolute; top:-5px; width:10px; height:10px;
+    transform:translateX(-50%); border-radius:50%;
+    background:#fff; border:2px solid var(--a); box-sizing:border-box;
+  }
+  .inputs-v3 .v3-converge .v3-cdot.c1{ left:16.667%; }
+  .inputs-v3 .v3-converge .v3-cdot.c2{ left:50%; }
+  .inputs-v3 .v3-converge .v3-cdot.c3{ left:83.333%; }
+  .inputs-v3 .v3-converge-lbl{
+    position:relative; z-index:2;
+    font-family:'JetBrains Mono',ui-monospace,monospace;
+    font-size:11px; letter-spacing:0.18em; color:var(--a);
+    text-transform:uppercase; font-weight:600;
+    padding:7px 16px; background:#fff;
+    border:1px solid var(--a); border-radius:999px;
+    box-shadow:0 0 0 6px #fff;
+  }
+  .inputs-v3 .v3-converge-tip{
+    position:absolute; left:50%; bottom:-6px;
+    width:28px; height:20px;
+    transform:translateX(-50%);
+    pointer-events:none;
+  }
+
+  .inputs-v3 .v3-hub{
+    display:grid; grid-template-columns:1fr 1px 420px;
+    gap:32px; align-items:center;
+    padding:28px 36px;
+    background:
+      linear-gradient(180deg, oklch(0.30 0.07 250) 0%, oklch(0.24 0.06 250) 100%);
+    border-radius:4px;
+  }
+  .inputs-v3 .v3-hub-left{ display:flex; flex-direction:column; gap:8px; }
+  .inputs-v3 .v3-hub-tag{
+    font-family:'JetBrains Mono',ui-monospace,monospace;
+    font-size:12px; letter-spacing:0.14em; color:rgba(255,255,255,0.55);
+    text-transform:uppercase; font-weight:500;
+  }
+  .inputs-v3 .v3-hub-title{
+    font-size:30px; line-height:1.2; letter-spacing:-0.02em;
+    font-weight:500; color:#fff;
+  }
+  .inputs-v3 .v3-hub-title .em{
+    font-family:'Fraunces',serif; font-weight:700;
+    color:oklch(0.86 0.10 230);
+  }
+  .inputs-v3 .v3-hub-sub{
+    font-size:15px; line-height:1.5; color:rgba(255,255,255,0.72);
+    margin-top:2px;
+  }
+  .inputs-v3 .v3-hub-sub b{ color:#fff; font-weight:600; }
+  .inputs-v3 .v3-hub-div{
+    width:1px; height:80%; background:rgba(255,255,255,0.14);
+  }
+  .inputs-v3 .v3-hub-right{ display:flex; flex-direction:column; gap:10px; }
+  .inputs-v3 .v3-hub-out-lbl{
+    font-family:'JetBrains Mono',ui-monospace,monospace;
+    font-size:11px; letter-spacing:0.18em; color:rgba(255,255,255,0.55);
+    text-transform:uppercase; font-weight:500;
+  }
+  .inputs-v3 .v3-hub-outs{ display:flex; flex-direction:column; gap:6px; }
+  .inputs-v3 .v3-out{
+    display:flex; align-items:center; gap:12px;
+    padding:12px 16px; background:rgba(255,255,255,0.06);
+    border-radius:2px;
+    font-family:'JetBrains Mono',ui-monospace,monospace;
+    font-size:14px; color:#fff; font-weight:500; letter-spacing:0.02em;
+  }
+  .inputs-v3 .v3-out .dot{
+    width:6px; height:6px; border-radius:50%;
+    background:oklch(0.78 0.14 250); flex-shrink:0;
+  }
+
   /* ── 5. INPUTS · V2 Editorial ── */
   .inputs-v2{
     flex:1; min-height:0; padding:24px 96px 72px;
@@ -1532,64 +1673,79 @@
     </p>
   </div>
 
-  <!-- ─── V1 · Diagrammatic — 세 입력이 Claude로 수렴 ─── -->
-  <div class="body-v1" data-om-id="6cd6e833:297">
-    <div class="inputs-v1" data-om-id="6cd6e833:298">
-      <div class="lanes" data-om-id="6cd6e833:299">
-        <div class="lane" data-om-id="6cd6e833:300">
-          <div class="idx" data-om-id="6cd6e833:301">01</div>
-          <div class="lb" data-om-id="6cd6e833:302">
-            <div class="tag" data-om-id="6cd6e833:303">입력 · Site</div>
-            <h3 data-om-id="6cd6e833:304">대지 · 법적 경계</h3>
-            <div class="sub" data-om-id="6cd6e833:305">DXF 2 레이어 — 설계 가능 영역</div>
-            <div class="mini" data-om-id="6cd6e833:306"><span class="pip" data-om-id="6cd6e833:307"><b data-om-id="6cd6e833:308">17,842</b>㎡</span><span class="pip" data-om-id="6cd6e833:309">BUILDLINE</span></div>
+  <!-- ─── V1 · Stacked — 3카드 가로 + 수직 화살표 수렴 + Claude 허브 ─── -->
+  <div class="body-v1">
+    <div class="inputs-v3">
+      <div class="v3-row-lbl"><span class="ln"></span><span class="tx">INPUTS · 3</span><span class="ln"></span></div>
+      <div class="v3-row">
+        <div class="v3-card">
+          <div class="v3-head"><span class="v3-idx">01</span><span class="v3-tag">Site</span></div>
+          <h3 class="v3-title">대지 · 법적 경계</h3>
+          <p class="v3-desc">DXF 2 레이어로 <b>설계 가능 영역</b>을 Claude에 전달</p>
+          <div class="v3-pips">
+            <span class="v3-pip"><b>17,842</b>㎡</span>
+            <span class="v3-pip">SITE</span>
+            <span class="v3-pip">BUILDLINE</span>
           </div>
         </div>
-        <div class="lane" data-om-id="6cd6e833:310">
-          <div class="idx" data-om-id="6cd6e833:311">02</div>
-          <div class="lb" data-om-id="6cd6e833:312">
-            <div class="tag" data-om-id="6cd6e833:313">입력 · Rules</div>
-            <h3 data-om-id="6cd6e833:314">법규 · 배치 기준</h3>
-            <div class="sub" data-om-id="6cd6e833:315">Claude가 지키는 제한조건</div>
-            <div class="mini" data-om-id="6cd6e833:316"><span class="pip" data-om-id="6cd6e833:317">최고 <b data-om-id="6cd6e833:318">45F</b></span><span class="pip" data-om-id="6cd6e833:319">목표 <b data-om-id="6cd6e833:320">850</b>세대</span><span class="pip" data-om-id="6cd6e833:321">인동 <b data-om-id="6cd6e833:322">25m+</b></span></div>
+        <div class="v3-card">
+          <div class="v3-head"><span class="v3-idx">02</span><span class="v3-tag">Rules</span></div>
+          <h3 class="v3-title">법규 · 배치 기준</h3>
+          <p class="v3-desc">Claude는 <b>이 조건 안에서만</b> 대안 생성</p>
+          <div class="v3-pips">
+            <span class="v3-pip">최고 <b>45F</b></span>
+            <span class="v3-pip">목표 <b>850</b>세대</span>
+            <span class="v3-pip">인동 <b>25m+</b></span>
           </div>
         </div>
-        <div class="lane" data-om-id="6cd6e833:323">
-          <div class="idx" data-om-id="6cd6e833:324">03</div>
-          <div class="lb" data-om-id="6cd6e833:325">
-            <div class="tag" data-om-id="6cd6e833:326">입력 · Seeds</div>
-            <h3 data-om-id="6cd6e833:327">주동 시드 라이브러리</h3>
-            <div class="sub" data-om-id="6cd6e833:328">기존 사례의 평형 · 조합</div>
-            <div class="mini" data-om-id="6cd6e833:329"><span class="pip" data-om-id="6cd6e833:330">판상형</span><span class="pip" data-om-id="6cd6e833:331">ㄴ자형</span><span class="pip" data-om-id="6cd6e833:332">Y자형</span><span class="pip" data-om-id="6cd6e833:333">+4</span></div>
+        <div class="v3-card">
+          <div class="v3-head"><span class="v3-idx">03</span><span class="v3-tag">Seeds</span></div>
+          <h3 class="v3-title">주동 시드 라이브러리</h3>
+          <p class="v3-desc">기존 사례의 <b>평형 · 조합</b>을 선택·회전·조합</p>
+          <div class="v3-pips">
+            <span class="v3-pip">판상형</span>
+            <span class="v3-pip">ㄴ자</span>
+            <span class="v3-pip">Y자</span>
+            <span class="v3-pip">+3</span>
           </div>
         </div>
       </div>
 
-      <div class="converge" data-om-id="6cd6e833:334">
-        <!-- 3개 입력이 hub(168,270)로 수렴 · Track A blue 통일 · 단일 chevron 으로 Claude 진입 -->
-        <svg viewBox="0 0 200 540" data-om-id="6cd6e833:335" aria-hidden="true">
-          <path d="M 0 80 C 84 80, 84 270, 168 270" fill="none" stroke="var(--a)" stroke-width="2"></path>
-          <path d="M 0 270 L 168 270" fill="none" stroke="var(--a)" stroke-width="2"></path>
-          <path d="M 0 460 C 84 460, 84 270, 168 270" fill="none" stroke="var(--a)" stroke-width="2"></path>
-          <circle cx="0" cy="80" r="5" fill="var(--a)"></circle>
-          <circle cx="0" cy="270" r="5" fill="var(--a)"></circle>
-          <circle cx="0" cy="460" r="5" fill="var(--a)"></circle>
-          <circle cx="168" cy="270" r="5" fill="var(--a)"></circle>
-          <line x1="168" y1="270" x2="192" y2="270" stroke="var(--a)" stroke-width="2"></line>
-          <polygon points="200,270 188,262 188,278" fill="var(--a)"></polygon>
+      <div class="v3-converge" aria-hidden="true">
+        <svg class="v3-curves" viewBox="0 0 900 96" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="v3funnel" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="var(--a)" stop-opacity="0.28"></stop>
+              <stop offset="55%"  stop-color="var(--a)" stop-opacity="0.7"></stop>
+              <stop offset="100%" stop-color="var(--a)" stop-opacity="1"></stop>
+            </linearGradient>
+          </defs>
+          <path d="M 150 4 C 150 50, 450 34, 450 72" fill="none" stroke="url(#v3funnel)" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"></path>
+          <path d="M 450 4 L 450 72" fill="none" stroke="url(#v3funnel)" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"></path>
+          <path d="M 750 4 C 750 50, 450 34, 450 72" fill="none" stroke="url(#v3funnel)" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"></path>
+        </svg>
+        <span class="v3-cdot c1"></span>
+        <span class="v3-cdot c2"></span>
+        <span class="v3-cdot c3"></span>
+        <div class="v3-converge-lbl">Claude가 추천안으로 수렴</div>
+        <svg class="v3-converge-tip" viewBox="0 0 28 20" preserveAspectRatio="xMidYMid meet">
+          <path d="M 4 4 L 14 16 L 24 4" fill="none" stroke="var(--a)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
       </div>
 
-      <div class="hub" data-om-id="6cd6e833:336">
-        <div class="claude-node" data-om-id="6cd6e833:337">
-          <div class="tag" data-om-id="6cd6e833:338">Processed by</div>
-          <h3 data-om-id="6cd6e833:339">Claude가 <span class="em" data-om-id="6cd6e833:340">추천안</span>으로 수렴</h3>
-          <p data-om-id="6cd6e833:341">세 가지 입력이 있으면 <b data-om-id="6cd6e833:342">당일</b>에 대안 탐색부터 매스까지 완료.</p>
+      <div class="v3-hub">
+        <div class="v3-hub-left">
+          <div class="v3-hub-tag">Processed by Claude</div>
+          <h3 class="v3-hub-title">세 입력 → <span class="em">추천안</span>으로 수렴</h3>
+          <p class="v3-hub-sub"><b>당일</b>에 대안 탐색부터 매스까지 완료</p>
         </div>
-        <div class="out-lbl" data-om-id="6cd6e833:343">Output</div>
-        <div class="out-items" data-om-id="6cd6e833:344">
-          <div class="oi" data-om-id="6cd6e833:345"><span class="dot" data-om-id="6cd6e833:346"></span>추천안 리스트</div>
-          <div class="oi" data-om-id="6cd6e833:347"><span class="dot" data-om-id="6cd6e833:348"></span>Rhino 매스 + 창문</div>
+        <div class="v3-hub-div"></div>
+        <div class="v3-hub-right">
+          <div class="v3-hub-out-lbl">Output</div>
+          <div class="v3-hub-outs">
+            <div class="v3-out"><span class="dot"></span>추천안 리스트</div>
+            <div class="v3-out"><span class="dot"></span>Rhino 매스 + 창문</div>
+          </div>
         </div>
       </div>
     </div>
