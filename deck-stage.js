@@ -6,6 +6,7 @@
  *      and posts {slideIndexChanged: N} to the parent window on nav.
  *  (b) keyboard navigation — ←/→, PgUp/PgDn, Space, Home/End, number keys.
  *  (c) press R to reset to slide 0 (with a tasteful keyboard hint).
+ *      press F to toggle fullscreen, L to toggle laser-pointer mode (Esc exits).
  *  (d) bottom-center overlay showing slide count + hints, fades out on idle.
  *  (e) auto-scaling — inner canvas is a fixed design size (default 1920×1080)
  *      scaled with `transform: scale()` to fit the viewport, letterboxed.
@@ -261,8 +262,30 @@
         break-after: auto;
         page-break-after: auto;
       }
-      .overlay, .tapzones { display: none !important; }
+      .overlay, .tapzones, .laser-dot { display: none !important; }
     }
+
+    /* Laser pointer — fixed-position red dot that follows the cursor.
+       Lives at viewport scale, ignores transform: scale() of the canvas. */
+    .laser-dot {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      margin: -9px 0 0 -9px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,40,40,0.98) 0%, rgba(255,40,40,0.85) 35%, rgba(255,40,40,0) 70%);
+      box-shadow: 0 0 14px 5px rgba(255,40,40,0.55);
+      pointer-events: none;
+      transform: translate(-1000px, -1000px);
+      display: none;
+      z-index: 2147483647;
+    }
+    .laser-dot[data-on] { display: block; }
+
+    /* Hide system cursor over the host while laser mode is on. */
+    :host([data-laser]) { cursor: none; }
   `;
 
   class DeckStage extends HTMLElement {
@@ -276,6 +299,8 @@
       this._notes = [];
       this._hideTimer = null;
       this._mouseIdleTimer = null;
+      this._laserOn = false;
+      this._laserDot = null;
       this._storageKey = STORAGE_PREFIX + (location.pathname || '/');
 
       this._onKey = this._onKey.bind(this);
@@ -371,13 +396,22 @@
         </button>
         <span class="divider"></span>
         <button class="btn reset" type="button" aria-label="Reset to first slide" title="Reset (R)">Reset<span class="kbd">R</span></button>
+        <button class="btn fs" type="button" aria-label="Toggle fullscreen" title="Fullscreen (F)">FS<span class="kbd">F</span></button>
+        <button class="btn laser" type="button" aria-label="Toggle laser pointer" title="Laser pointer (L)">Laser<span class="kbd">L</span></button>
       `;
 
       overlay.querySelector('.prev').addEventListener('click', () => this._go(this._index - 1, 'click'));
       overlay.querySelector('.next').addEventListener('click', () => this._go(this._index + 1, 'click'));
       overlay.querySelector('.reset').addEventListener('click', () => this._go(0, 'click'));
+      overlay.querySelector('.fs').addEventListener('click', () => this._toggleFullscreen());
+      overlay.querySelector('.laser').addEventListener('click', () => this._toggleLaser());
 
-      this._root.append(style, stage, tapzones, overlay);
+      const laserDot = document.createElement('div');
+      laserDot.className = 'laser-dot';
+      laserDot.setAttribute('aria-hidden', 'true');
+
+      this._root.append(style, stage, tapzones, overlay, laserDot);
+      this._laserDot = laserDot;
       this._canvas = canvas;
       this._slot = slot;
       this._overlay = overlay;
@@ -543,9 +577,36 @@
 
     _onResize() { this._fit(); }
 
-    _onMouseMove() {
+    _onMouseMove(e) {
       // Keep overlay visible while mouse moves; hide after idle.
       this._flashOverlay();
+      if (this._laserOn && this._laserDot) {
+        this._laserDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      }
+    }
+
+    _toggleFullscreen() {
+      const doc = document;
+      const el = doc.documentElement;
+      const fsEl = doc.fullscreenElement || doc.webkitFullscreenElement;
+      if (!fsEl) {
+        const req = el.requestFullscreen || el.webkitRequestFullscreen;
+        if (req) req.call(el).catch(() => {});
+      } else {
+        const exit = doc.exitFullscreen || doc.webkitExitFullscreen;
+        if (exit) exit.call(doc).catch(() => {});
+      }
+    }
+
+    _toggleLaser(force) {
+      const next = typeof force === 'boolean' ? force : !this._laserOn;
+      this._laserOn = next;
+      if (this._laserDot) {
+        if (next) this._laserDot.setAttribute('data-on', '');
+        else this._laserDot.removeAttribute('data-on');
+      }
+      if (next) this.setAttribute('data-laser', '');
+      else this.removeAttribute('data-laser');
     }
 
     _onTapBack(e) {
@@ -577,6 +638,12 @@
         this._go(this._slides.length - 1, 'keyboard');
       } else if (key === 'r' || key === 'R') {
         this._go(0, 'keyboard');
+      } else if (key === 'f' || key === 'F') {
+        this._toggleFullscreen();
+      } else if (key === 'l' || key === 'L') {
+        this._toggleLaser();
+      } else if (key === 'Escape' && this._laserOn) {
+        this._toggleLaser(false);
       } else if (/^[0-9]$/.test(key)) {
         // 1..9 jump to that slide; 0 jumps to 10.
         const n = key === '0' ? 9 : parseInt(key, 10) - 1;

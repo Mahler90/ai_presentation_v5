@@ -562,7 +562,7 @@
   .rm.next .hd .tag{background:var(--b);color:#fff;}
   .rm .hd h3{font-size:24px;font-weight:600;letter-spacing:-0.01em;}
   .rm.next .hd h3{color:var(--ink);}
-  .rm .items{flex:1;padding:32px;display:flex;flex-direction:column;gap:24px;}
+  .rm .items{flex:1;padding:32px;display:flex;flex-direction:column;gap:24px;justify-content:center;}
   .rm .item{
     padding:24px 28px;border-radius:4px;
     background:var(--paper-2);
@@ -583,7 +583,7 @@
     display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--mute);
     font-family:'JetBrains Mono','Pretendard Variable','Pretendard','Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',ui-monospace,monospace;font-size:17px;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;
   }
-  .rm-arr .arr{font-size:36px;font-weight:300;color:var(--ink);}
+  .rm-arr .arr{font-size:72px;font-weight:300;color:var(--ink);line-height:1;}
 
   /* End slide */
   .end{background:var(--paper);padding:96px;justify-content:center;align-items:center;text-align:center;}
@@ -2648,9 +2648,9 @@
 <section class="slide" data-label="Roadmap" data-screen-label="20 Roadmap" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="19" data-om-id="6cd6e833:1190">
   <div class="head" data-om-id="6cd6e833:1191">
     <div class="eyebrow" data-om-id="6cd6e833:1192">Roadmap</div>
-    <h1 class="title" data-om-id="6cd6e833:1195">지금은 단계별로,<br data-om-id="6cd6e833:1196">다음은 <span class="serif" data-om-id="6cd6e833:1197">한 흐름 · 법규검토 연결</span></h1>
+    <h1 class="title" data-om-id="6cd6e833:1195">지금은 단계별로,<br data-om-id="6cd6e833:1196">다음은 <span class="serif" data-om-id="6cd6e833:1197">한 흐름 · 법규 · BIM 도면화</span></h1>
     <p class="lead" data-om-id="6cd6e833:1198">
-      규모검토부터 시각화까지 <b data-om-id="6cd6e833:1199">한 흐름</b>으로. 나아가 <b>법규검토까지</b> 이어지는 프로세스.
+      규모검토부터 시각화까지 <b data-om-id="6cd6e833:1199">한 흐름</b>으로. 나아가 <b>법규검토</b>와 <b>BIM 기반 도면화</b>까지 이어지는 프로세스.
     </p>
   </div>
   <div class="body" data-om-id="6cd6e833:1200">
@@ -2664,13 +2664,13 @@
       </div>
       <div class="rm-arr" data-om-id="6cd6e833:1215">
         <div class="arr" data-om-id="6cd6e833:1216">→</div>
-        <div data-om-id="6cd6e833:1217">통합 ·<br data-om-id="6cd6e833:1218">법규 연결</div>
       </div>
       <div class="rm next" data-om-id="6cd6e833:1219">
-        <div class="hd" data-om-id="6cd6e833:1220"><span class="tag" data-om-id="6cd6e833:1221">Next</span><h3 data-om-id="6cd6e833:1222">한 흐름 + 법규검토 연결</h3></div>
+        <div class="hd" data-om-id="6cd6e833:1220"><span class="tag" data-om-id="6cd6e833:1221">Next</span><h3 data-om-id="6cd6e833:1222">한 흐름 + 법규 + BIM 도면화</h3></div>
         <div class="items" data-om-id="6cd6e833:1223">
           <div class="item" data-om-id="6cd6e833:1224"><h4 data-om-id="6cd6e833:1225">규모검토 → 시각화 한 번에</h4><p data-om-id="6cd6e833:1226">지금은 각 단계별. 다음은 <b data-om-id="6cd6e833:1227">하나의 흐름</b>으로 통합</p></div>
           <div class="item" data-om-id="6cd6e833:1228"><h4 data-om-id="6cd6e833:1229">법규검토까지 연결</h4><p data-om-id="6cd6e833:1230">주차 · 일조 · 용적률 등 <b data-om-id="6cd6e833:1231">법규 자동 검증</b>까지 이어지는 프로세스 구축</p></div>
+          <div class="item" data-om-id="6cd6e833:1240"><h4 data-om-id="6cd6e833:1241">BIM 기반 도면화까지 AI</h4><p data-om-id="6cd6e833:1242">매스 · 확정안을 <b data-om-id="6cd6e833:1243">BIM 모델</b>로 연결, 평면·입면·단면 <b data-om-id="6cd6e833:1244">도면 자동 생성</b>까지 AI로 확장</p></div>
         </div>
       </div>
     </div>
@@ -2681,8 +2681,52 @@
   </div>
 </section>
 
-<!-- ══════════ 21 End ══════════ -->
-<section class="slide end" data-label="End" data-screen-label="21 End" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-om-id="6cd6e833:1277">
+<!-- ══════════ 21 Bonus · MCP Extension — Chrome via MCP (Split) ══════════ -->
+<section class="slide split" data-label="Bonus — One More Thing" data-screen-label="21 Bonus — One More Thing" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="20" data-om-id="6cd6e833:1300">
+  <div class="lp" data-om-id="6cd6e833:1301">
+    <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.1em;color:var(--mute);text-transform:uppercase;margin-bottom:10px;">Bonus · One More Thing</div>
+    <h1 class="title" data-om-id="6cd6e833:1302">설계 바깥까지<br data-om-id="6cd6e833:1303">→ <span class="serif" data-om-id="6cd6e833:1304">같은 방식</span></h1>
+    <p class="lead" data-om-id="6cd6e833:1305">
+      같은 MCP 프로토콜이면 <b data-om-id="6cd6e833:1306">비설계 업무</b>도 같은 흐름. 가볍게 한 예시.
+    </p>
+    <div class="prompt" style="margin-top:36px;" data-om-id="6cd6e833:1307">
+      <div class="lbl" data-om-id="6cd6e833:1308">Prompt · to Claude</div>
+      "Time에 등록된 <b data-om-id="6cd6e833:1309">근무시간 정리</b>,<br data-om-id="6cd6e833:1310">야근일은 <b data-om-id="6cd6e833:1311">야근식대 상신</b>까지 자동으로."
+    </div>
+    <ul style="list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:14px;" data-om-id="6cd6e833:1312">
+      <li style="font-size:21px;line-height:1.5;color:var(--ink-2);padding-left:28px;position:relative;" data-om-id="6cd6e833:1313">
+        <span style="position:absolute;left:0;top:14px;width:14px;height:1px;background:var(--a);" data-om-id="6cd6e833:1314"></span>
+        Chrome · <b data-om-id="6cd6e833:1315">브라우저 업무 자동화</b>
+      </li>
+      <li style="font-size:21px;line-height:1.5;color:var(--ink-2);padding-left:28px;position:relative;" data-om-id="6cd6e833:1316">
+        <span style="position:absolute;left:0;top:14px;width:14px;height:1px;background:var(--a);" data-om-id="6cd6e833:1317"></span>
+        반복 행정도 <b data-om-id="6cd6e833:1318">같은 프롬프트 한 줄</b>
+      </li>
+      <li style="font-size:21px;line-height:1.5;color:var(--ink-2);padding-left:28px;position:relative;" data-om-id="6cd6e833:1319">
+        <span style="position:absolute;left:0;top:14px;width:14px;height:1px;background:var(--a);" data-om-id="6cd6e833:1320"></span>
+        설계자의 시간은 다시 <b data-om-id="6cd6e833:1321">설계로</b>
+      </li>
+    </ul>
+    <div class="lp-footer" data-om-id="6cd6e833:1322">
+      <div class="l" data-om-id="6cd6e833:1323"><span style="color:var(--a)" data-om-id="6cd6e833:1324">MCP 확장</span><span class="dot" data-om-id="6cd6e833:1325"></span><span data-om-id="6cd6e833:1326">설계 바깥까지</span></div>
+      <span class="num" data-om-id="6cd6e833:1327">21</span>
+    </div>
+  </div>
+  <div class="rp" data-om-id="6cd6e833:1328">
+    <div class="stage-bg" data-om-id="6cd6e833:1329"></div>
+    <div class="chip" data-om-id="6cd6e833:1330"><span class="dot" data-om-id="6cd6e833:1331"></span>Recorded · Chrome via MCP</div>
+    <div class="media" data-om-id="6cd6e833:1332">
+      <video src="assets/seq-09-2.mp4" muted="" playsinline="" preload="metadata" data-om-id="6cd6e833:1333"></video>
+    </div>
+    <div class="cap" data-om-id="6cd6e833:1334">
+      <span class="t" data-om-id="6cd6e833:1335">비설계 업무도 같은 방식으로</span>
+      <span data-om-id="6cd6e833:1336">Claude + MCP → Chrome</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 22 End ══════════ -->
+<section class="slide end" data-label="End" data-screen-label="22 End" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-om-id="6cd6e833:1277">
   <h1 data-om-id="6cd6e833:1278"><span class="serif" data-om-id="6cd6e833:1279">감사</span>합니다</h1>
   <p class="sub" data-om-id="6cd6e833:1280">
     설계자를 대체하는 도구가 아니라,<br data-om-id="6cd6e833:1281"><b data-om-id="6cd6e833:1282">더 많이 검토하고, 더 빠르게 설명하는</b> 도구.
@@ -2846,6 +2890,81 @@
     } else {
       initial();
     }
+  })();
+</script>
+
+<style>
+  #laser-pointer{
+    position:fixed;left:0;top:0;width:18px;height:18px;border-radius:50%;
+    background:radial-gradient(circle, rgba(255,60,60,1) 0%, rgba(230,0,0,0.9) 35%, rgba(230,0,0,0) 75%);
+    box-shadow:0 0 12px 4px rgba(255,0,0,0.55), 0 0 24px 8px rgba(255,0,0,0.25);
+    pointer-events:none;transform:translate(-50%,-50%);
+    z-index:2147483647;display:none;
+  }
+  body.laser-on, body.laser-on *{cursor:none !important;}
+  #present-hint{
+    position:fixed;right:14px;bottom:14px;z-index:2147483646;
+    font-family:'JetBrains Mono','Pretendard Variable','Pretendard',ui-monospace,monospace;
+    font-size:11px;letter-spacing:0.06em;color:#888;background:rgba(255,255,255,0.85);
+    padding:6px 10px;border:1px solid rgba(0,0,0,0.08);border-radius:3px;
+    pointer-events:none;opacity:0;transition:opacity 0.3s ease;
+  }
+  #present-hint.show{opacity:1;}
+</style>
+
+<script>
+  // 발표 모드: F = 전체화면 토글 / L = 레이저 포인터 토글
+  (() => {
+    const dot = document.createElement('div');
+    dot.id = 'laser-pointer';
+    document.body.appendChild(dot);
+
+    const hint = document.createElement('div');
+    hint.id = 'present-hint';
+    hint.textContent = 'F: 전체화면  ·  L: 레이저';
+    document.body.appendChild(hint);
+    let hintTimer = null;
+    const flashHint = (text) => {
+      hint.textContent = text;
+      hint.classList.add('show');
+      if (hintTimer) clearTimeout(hintTimer);
+      hintTimer = setTimeout(() => hint.classList.remove('show'), 1400);
+    };
+    // 시작 시 1회만 안내
+    setTimeout(() => flashHint('F: 전체화면  ·  L: 레이저'), 600);
+
+    let laserOn = false;
+    const setLaser = (on) => {
+      laserOn = on;
+      document.body.classList.toggle('laser-on', on);
+      dot.style.display = on ? 'block' : 'none';
+    };
+
+    document.addEventListener('mousemove', (e) => {
+      if (!laserOn) return;
+      dot.style.left = e.clientX + 'px';
+      dot.style.top = e.clientY + 'px';
+    }, { passive: true });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      const t = e.target;
+      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+      if (e.key === 'l' || e.key === 'L') {
+        setLaser(!laserOn);
+        flashHint(laserOn ? '레이저 ON' : '레이저 OFF');
+        e.preventDefault();
+      } else if (e.key === 'f' || e.key === 'F') {
+        if (!document.fullscreenElement) {
+          (document.documentElement.requestFullscreen?.() || Promise.reject()).catch(() => {});
+          flashHint('전체화면 ON');
+        } else {
+          document.exitFullscreen?.().catch(() => {});
+          flashHint('전체화면 OFF');
+        }
+        e.preventDefault();
+      }
+    });
   })();
 </script>
 
