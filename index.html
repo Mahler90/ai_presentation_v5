@@ -571,40 +571,49 @@
   }
 
   /* ── Slide 19 Roles · entrance choreography ──
-     실측 큐:
-        2.9s  "AI는 반복과 정량 검토에 강하고,"          → 좌측 AI · 도구 칼럼 (왼쪽에서 슬라이드 인)
-        6.4s  "설계자는 판단과 결정에 집중합니다."        → 디바이더 + 우측 Senior·PM 칼럼 (오른쪽에서)
-       11.2s  "적은 인원으로 더 많은 안을, 더 빠르게…"   → 양쪽 sr-tag pop (강조 마무리) */
+     실측 큐 (2026-04 보정 — 문구 중간 지점에 맞춰 1.1~1.8s 당김):
+        1.8s  "AI는 반복과 정량 검토에 강하고," 중간      → 좌측 AI · 도구 칼럼 (왼쪽에서 슬라이드 인)
+        4.6s  "설계자는 판단과 결정에 집중합니다." 중간    → 디바이더 + 우측 Senior·PM 칼럼 (오른쪽에서)
+        9.5s  "적은 인원으로 더 많은 안을, 더 빠르게…"   → 타이틀 "시간 · 인력 · 비용 절감" 형광펜 (큰글씨 강조 마무리) */
+  [data-screen-label="19 Roles"] .head .title .serif{
+    position:relative; isolation:isolate; display:inline-block;
+  }
+  [data-screen-label="19 Roles"] .head .title .serif::after{
+    content:""; position:absolute; left:-4px; right:-4px; bottom:8%;
+    height:32%; z-index:-1; border-radius:2px;
+    background:var(--marker-a);
+    transform-origin:left center; transform:scaleX(0);
+  }
   [data-screen-label="19 Roles"][data-deck-active] .split-roles .sr-col.sr-a{
-    animation: ovSlideInLeft .65s cubic-bezier(.2,.7,.2,1) 2.90s both;
+    animation: ovSlideInLeft .65s cubic-bezier(.2,.7,.2,1) 1.80s both;
   }
   [data-screen-label="19 Roles"][data-deck-active] .split-roles .sr-divider{
-    animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 6.40s both;
+    animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 4.60s both;
   }
   [data-screen-label="19 Roles"][data-deck-active] .split-roles .sr-col.sr-h{
-    animation: ovSlideInRight .65s cubic-bezier(.2,.7,.2,1) 6.40s both;
+    animation: ovSlideInRight .65s cubic-bezier(.2,.7,.2,1) 4.60s both;
   }
-  [data-screen-label="19 Roles"][data-deck-active] .split-roles .sr-col.sr-a .sr-tag,
-  [data-screen-label="19 Roles"][data-deck-active] .split-roles .sr-col.sr-h .sr-tag{
-    animation: ovPillPop .55s cubic-bezier(.2,1.4,.4,1) 11.20s both;
+  [data-screen-label="19 Roles"][data-deck-active] .head .title .serif::after{
+    animation: ovMarker .9s cubic-bezier(.2,.7,.2,1) 9.50s both;
   }
   @media (prefers-reduced-motion: reduce){
     [data-screen-label="19 Roles"][data-deck-active] .split-roles .sr-col,
     [data-screen-label="19 Roles"][data-deck-active] .split-roles .sr-divider,
-    [data-screen-label="19 Roles"][data-deck-active] .split-roles .sr-col .sr-tag{
+    [data-screen-label="19 Roles"][data-deck-active] .head .title .serif::after{
       animation:none;
     }
+    [data-screen-label="19 Roles"] .head .title .serif::after{ transform:scaleX(1); }
   }
 
   /* ── Slide 20 Roadmap · entrance choreography ──
-     실측 큐:
+     실측 큐 (2026-04 보정 — 문구 중간 지점에 맞춰 1~1.5s 당김):
         3.9s  "앞으로는 이 흐름을 더 연결하는 게 목표입니다."  (intro 휴지 — 시각 변화 없음)
-        5.8s  "지금은 단계별로 나뉘어 있지만,"                → 좌측 Now 박스 (왼쪽에서 슬라이드 인)
-        7.5s  (전환 휴지)                                       → 화살표 페이드
-        8.4s  "앞으로는 하나의 프로세스로 묶고"               → 우측 Next 박스 + item 01 (오른쪽에서)
-       10.2s  "법규검토 자동화와"                              → Next item 02 ("법규검토까지 연결")
-       13.4s  "BIM 도면화까지 이어가려고 합니다."              → Next item 03 ("BIM 기반 도면화")
-       13.9s  강조 마무리                                       → title의 "BIM 도면화" 마커 슬라이드 */
+        4.8s  "지금은 단계별로 나뉘어 있지만," 중간            → 좌측 Now 박스 (왼쪽에서 슬라이드 인)
+        6.0s  (전환 휴지)                                       → 화살표 페이드
+        7.1s  "앞으로는 하나의 프로세스로 묶고" 중간            → 우측 Next 박스 + item 01 (오른쪽에서)
+        9.3s  "법규검토 자동화와" 중간                          → Next item 02 ("법규검토까지 연결")
+       11.8s  "BIM 도면화까지 이어가려고 합니다." 중간          → Next item 03 ("BIM 기반 도면화")
+       12.3s  강조 마무리                                       → title의 "BIM 도면화" 마커 슬라이드 */
   [data-screen-label="20 Roadmap"] .head .title .serif{
     position:relative; isolation:isolate; display:inline-block;
   }
@@ -615,22 +624,22 @@
     transform-origin:left center; transform:scaleX(0);
   }
   [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm.now{
-    animation: ovSlideInLeft .65s cubic-bezier(.2,.7,.2,1) 5.80s both;
+    animation: ovSlideInLeft .65s cubic-bezier(.2,.7,.2,1) 4.80s both;
   }
   [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm-arr{
-    animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 7.50s both;
+    animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 6.00s both;
   }
   [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm.next{
-    animation: ovSlideInRight .65s cubic-bezier(.2,.7,.2,1) 8.40s both;
+    animation: ovSlideInRight .65s cubic-bezier(.2,.7,.2,1) 7.10s both;
   }
   [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm.next .items .item:nth-child(2){
-    animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 10.20s both;
+    animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 9.30s both;
   }
   [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm.next .items .item:nth-child(3){
-    animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 13.40s both;
+    animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 11.80s both;
   }
   [data-screen-label="20 Roadmap"][data-deck-active] .head .title .serif::after{
-    animation: ovMarker .9s cubic-bezier(.2,.7,.2,1) 13.90s both;
+    animation: ovMarker .9s cubic-bezier(.2,.7,.2,1) 12.30s both;
   }
   @media (prefers-reduced-motion: reduce){
     [data-screen-label="20 Roadmap"][data-deck-active] .head .title .serif::after,
