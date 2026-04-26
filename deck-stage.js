@@ -271,12 +271,12 @@
       position: fixed;
       left: 0;
       top: 0;
-      width: 18px;
-      height: 18px;
-      margin: -9px 0 0 -9px;
+      width: 6px;
+      height: 6px;
+      margin: -3px 0 0 -3px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,40,40,0.98) 0%, rgba(255,40,40,0.85) 35%, rgba(255,40,40,0) 70%);
-      box-shadow: 0 0 14px 5px rgba(255,40,40,0.55);
+      background: radial-gradient(circle, rgba(255,40,40,0.98) 0%, rgba(255,40,40,0.85) 40%, rgba(255,40,40,0) 75%);
+      box-shadow: 0 0 5px 2px rgba(255,40,40,0.45);
       pointer-events: none;
       transform: translate(-1000px, -1000px);
       display: none;

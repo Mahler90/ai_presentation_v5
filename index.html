@@ -809,7 +809,7 @@
   }
   .legal-note b{color:var(--ink);font-weight:600;}
 
-  /* ── Card 3 · 주동 시드 카탈로그 (3×2 = 6) ── */
+  /* ── Card 3 · 주동 라이브러리 (3×2 = 6) ── */
   .seed-grid{
     display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;
     gap:6px;height:100%;
@@ -841,7 +841,7 @@
   .seed-cell .unit{fill:#fff;stroke:var(--ink);stroke-width:0.7;}
   .seed-cell .unit.core{fill:var(--a-soft);stroke:var(--a);}
 
-  /* 선택된 시드 — Claude 가 고른 한 주동을 외곽 바운더리로 강조 */
+  /* 선택된 주동 — Claude 가 고른 한 주동을 외곽 바운더리로 강조 */
   .seed-cell.selected{
     border:2px solid var(--a);
     box-shadow:0 0 0 3px oklch(0.52 0.13 250 / 0.14);
@@ -1397,7 +1397,7 @@
     <div class="eyebrow" data-om-id="6cd6e833:26">Overview</div>
     <h1 class="title" data-om-id="6cd6e833:29">오늘 공유할 <span class="serif" data-om-id="6cd6e833:30">두 가지 사례</span></h1>
     <p class="lead" data-om-id="6cd6e833:31">
-      하나는 <b data-om-id="6cd6e833:32">규모검토 · 매스</b>, 다른 하나는 <b data-om-id="6cd6e833:33">이미지 · 영상</b>. <br>분당 재건축 · 목동 14단지 적용.
+      하나는 <b data-om-id="6cd6e833:32">규모검토 · 매스</b>, 다른 하나는 <b data-om-id="6cd6e833:33">이미지 · 영상</b>. <br>분당 재개발 · 목동 재건축 적용.
     </p>
   </div>
   <div class="body" data-om-id="6cd6e833:34">
@@ -1406,10 +1406,10 @@
         <div class="num" data-om-id="6cd6e833:37"><span class="pill" data-om-id="6cd6e833:38">사례 A</span>규모검토 · 매스</div>
         <h2 data-om-id="6cd6e833:39">규모검토부터<br data-om-id="6cd6e833:40"><span class="serif" data-om-id="6cd6e833:41">매스 모델링</span>까지</h2>
         <p class="desc" data-om-id="6cd6e833:42">
-          대지 · 법규 · 주동 시드를 주면 Claude가 <b data-om-id="6cd6e833:43">명령만으로</b> 배치안 비교 → <b data-om-id="6cd6e833:44">Rhino 매스</b>까지.
+          대지 · 법규 · 주동 라이브러리를 주면 Claude가 <b data-om-id="6cd6e833:43">명령만으로</b> 배치안 비교 → <b data-om-id="6cd6e833:44">Rhino 매스</b>까지.
         </p>
         <div class="ov-flow">
-          <div class="step"><span class="k">Input</span><span class="v">대지 · 법규 · 주동 시드</span></div>
+          <div class="step"><span class="k">Input</span><span class="v">대지 · 법규 · 주동 라이브러리</span></div>
           <div class="arr">↓</div>
           <div class="step accent"><span class="k">Process</span><span class="v"><b>Claude · MCP</b></span></div>
           <div class="arr">↓</div>
@@ -1562,7 +1562,7 @@
           <div class="label" data-om-id="6cd6e833:139">Inputs</div>
           <div class="stack" data-om-id="6cd6e833:140">
             <div class="item" data-om-id="6cd6e833:141"><span class="dot" data-om-id="6cd6e833:142"></span>대지 · 법규</div>
-            <div class="item" data-om-id="6cd6e833:143"><span class="dot" data-om-id="6cd6e833:144"></span>주동 시드</div>
+            <div class="item" data-om-id="6cd6e833:143"><span class="dot" data-om-id="6cd6e833:144"></span>주동 라이브러리</div>
           </div>
         </div>
         <div class="arrow ink" data-om-id="6cd6e833:145"></div>
@@ -1570,7 +1570,7 @@
           <div class="chip" data-om-id="6cd6e833:147"><span class="ring" data-om-id="6cd6e833:148"></span>Step A · 대안 · 추천</div>
           <h3 data-om-id="6cd6e833:149">Claude,<br data-om-id="6cd6e833:150"><b data-om-id="6cd6e833:151">대안 만들고 추천</b></h3>
           <dl class="kv" data-om-id="6cd6e833:152">
-            <div data-om-id="6cd6e833:153"><dt data-om-id="6cd6e833:154">입력</dt><dd data-om-id="6cd6e833:155">대지 · 법규 · 주동 시드</dd></div>
+            <div data-om-id="6cd6e833:153"><dt data-om-id="6cd6e833:154">입력</dt><dd data-om-id="6cd6e833:155">대지 · 법규 · 주동 라이브러리</dd></div>
             <div data-om-id="6cd6e833:156"><dt data-om-id="6cd6e833:157">탐색</dt><dd data-om-id="6cd6e833:158"><b data-om-id="6cd6e833:159">법적 조건</b> 안에서 대안 자동 생성</dd></div>
             <div data-om-id="6cd6e833:160"><dt data-om-id="6cd6e833:161">출력</dt><dd data-om-id="6cd6e833:162">추천안들 → <b data-om-id="6cd6e833:163">한 안 선택</b></dd></div>
           </dl>
@@ -1612,10 +1612,10 @@
             <span class="arrow" aria-hidden="true">→</span>
             <span class="step">추천</span>
           </h3>
-          <p class="lede" data-om-id="6cd6e833:199">법규와 주동 시드를 규칙으로, <b data-om-id="6cd6e833:200">법적 조건 안에서만</b> 대안을 자동 탐색. 정량 지표로 <b data-om-id="6cd6e833:201">추천안</b> 도출.</p>
+          <p class="lede" data-om-id="6cd6e833:199">법규와 주동 라이브러리 안에서 자동 탐색 · <b data-om-id="6cd6e833:201">추천안 도출</b>.</p>
         </div>
         <div class="ed-side" data-om-id="6cd6e833:202">
-          <div class="sitem" data-om-id="6cd6e833:203"><div class="sk" data-om-id="6cd6e833:204">입력</div><div class="sv" data-om-id="6cd6e833:205">대지 · 법규 · 주동 시드</div></div>
+          <div class="sitem" data-om-id="6cd6e833:203"><div class="sk" data-om-id="6cd6e833:204">입력</div><div class="sv" data-om-id="6cd6e833:205">대지 · 법규 · 주동 라이브러리</div></div>
           <div class="sitem" data-om-id="6cd6e833:206"><div class="sk" data-om-id="6cd6e833:207">출력</div><div class="sv" data-om-id="6cd6e833:208"><b data-om-id="6cd6e833:209">추천안</b> 리스트 (코드)</div></div>
           <div class="sitem" data-om-id="6cd6e833:210"><div class="sk" data-om-id="6cd6e833:211">Actor</div><div class="sv" data-om-id="6cd6e833:212">Claude</div></div>
         </div>
@@ -1625,13 +1625,13 @@
         <div class="ed-main" data-om-id="6cd6e833:215">
           <div class="tag" data-om-id="6cd6e833:216"><span class="tag-k" data-om-id="6cd6e833:217">Step B</span><span class="sep" data-om-id="6cd6e833:218"></span>매스 생성</div>
           <h3 class="flow" data-om-id="6cd6e833:219">
-            <span class="step">Claude 코드</span>
+            <span class="step">Claude</span>
             <span class="arrow" aria-hidden="true">→</span>
             <span class="step em">MCP</span>
             <span class="arrow" aria-hidden="true">→</span>
-            <span class="step">Rhino 매스</span>
+            <span class="step">Rhino</span>
           </h3>
-          <p class="lede" data-om-id="6cd6e833:221">Claude의 추천안은 <b data-om-id="6cd6e833:222">코드</b>로 출력. <b>MCP</b>가 그 코드를 <b data-om-id="6cd6e833:223">Rhino</b>와 연결해 매스 · 창으로 시각화. 설계자는 결과 검토에 집중.</p>
+          <p class="lede" data-om-id="6cd6e833:221">추천안을 <b data-om-id="6cd6e833:223">MCP</b>가 Rhino로 — 매스 · 창까지 시각화.</p>
         </div>
         <div class="ed-side" data-om-id="6cd6e833:224">
           <div class="sitem" data-om-id="6cd6e833:225"><div class="sk" data-om-id="6cd6e833:226">Prompt</div><div class="sv" data-om-id="6cd6e833:227">"선택안을 <b data-om-id="6cd6e833:228">라이노로 열어줘</b>."</div></div>
@@ -1643,7 +1643,7 @@
       <div class="mcp-note" style="margin-top:20px;padding:18px 24px;border:1px solid var(--line);border-left:3px solid var(--a);background:var(--paper-2);display:flex;gap:18px;align-items:baseline;">
         <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--a);font-weight:700;white-space:nowrap;">MCP</div>
         <p style="font-size:16px;line-height:1.55;color:var(--ink-2);margin:0;">
-          Claude를 <b style="color:var(--ink);font-weight:600;">다른 프로그램과 연결</b>해 주는 다리. 명령 한 줄로 Claude가 <b style="color:var(--ink);font-weight:600;">Rhino · CAD · Chrome</b>을 직접 조작.
+          Claude를 <b style="color:var(--ink);font-weight:600;">다른 프로그램과 잇는 다리</b>. <b style="color:var(--ink);font-weight:600;">Rhino · CAD</b>를 한 줄로 제어.
         </p>
       </div>
     </div>
@@ -1667,7 +1667,7 @@
         </div>
         <p class="tl-lede" data-om-id="6cd6e833:247"><b data-om-id="6cd6e833:248">법적 조건</b>을 규칙으로 두고 대안을 자동 탐색,<br data-om-id="6cd6e833:249">정량 지표로 <b data-om-id="6cd6e833:250">추천안</b>까지.</p>
         <dl class="tl-kv" data-om-id="6cd6e833:251">
-          <div data-om-id="6cd6e833:252"><dt data-om-id="6cd6e833:253">입력</dt><dd data-om-id="6cd6e833:254">대지 · 법규 · 주동 시드</dd></div>
+          <div data-om-id="6cd6e833:252"><dt data-om-id="6cd6e833:253">입력</dt><dd data-om-id="6cd6e833:254">대지 · 법규 · 주동 라이브러리</dd></div>
           <div data-om-id="6cd6e833:255"><dt data-om-id="6cd6e833:256">탐색</dt><dd data-om-id="6cd6e833:257">법적 조건 안에서 대안 자동 생성</dd></div>
           <div data-om-id="6cd6e833:258"><dt data-om-id="6cd6e833:259">출력</dt><dd data-om-id="6cd6e833:260">추천안들 → 한 안 선택</dd></div>
         </dl>
@@ -1707,9 +1707,6 @@
   <div class="head" data-om-id="6cd6e833:289">
     <div class="eyebrow" data-om-id="6cd6e833:290">Inputs</div>
     <h1 class="title" data-om-id="6cd6e833:293">Claude에 주는 <span class="serif" data-om-id="6cd6e833:294">세 가지 정보</span></h1>
-    <p class="lead" data-om-id="6cd6e833:295">
-      이 세 가지 조건을 입력하면 <b data-om-id="6cd6e833:296">대안 탐색부터 매스까지 원스톱</b>으로 이용.
-    </p>
   </div>
 
   <!-- ─── V1 · Editorial — 3카드 브래킷 + 우측 Output 타이포 ─── -->
@@ -1748,13 +1745,10 @@
             <div class="v4-idx">03</div>
             <div class="v4-main">
               <div class="v4-tag">Seeds</div>
-              <h3>주동 시드 라이브러리</h3>
-              <p>기존 사례의 <b>평형 · 조합</b>을 선택·회전·조합</p>
+              <h3>주동 라이브러리 · 사례 학습</h3>
+              <p>기존 사례를 미리 등록 → <b>Claude가 참고</b></p>
               <div class="v4-pips">
-                <span class="v4-pip">판상형</span>
-                <span class="v4-pip">ㄴ자</span>
-                <span class="v4-pip">Y자</span>
-                <span class="v4-pip">+3</span>
+                <span class="v4-pip">사례 <b>6건+</b></span>
               </div>
             </div>
           </div>
@@ -1781,10 +1775,6 @@
           설계자 의도에 맞는<br/>
           <span class="serif">최적안 도출</span>
         </h2>
-        <p class="v4-out-lede">
-          세 가지 입력만 있으면, 설계자가 원하는 방향으로<br/>
-          대안 탐색부터 매스까지 <b>한 흐름</b>으로.
-        </p>
         <div class="v4-deliver">
           <div class="v4-deliv">
             <div class="v4-deliv-k">01</div>
@@ -1847,11 +1837,11 @@
       <div class="col" data-om-id="6cd6e833:395">
         <div class="huge" data-om-id="6cd6e833:396">03</div>
         <div class="tag" data-om-id="6cd6e833:397">Seeds</div>
-        <h3 data-om-id="6cd6e833:398">주동 시드 라이브러리</h3>
+        <h3 data-om-id="6cd6e833:398">주동 라이브러리</h3>
         <p class="lede" data-om-id="6cd6e833:399">기존 사례의 <b data-om-id="6cd6e833:400">평형 · 조합</b>을 Claude가 선택 · 회전 · 조합.</p>
         <div class="facts" data-om-id="6cd6e833:401">
           <div class="fact" data-om-id="6cd6e833:402"><div class="fk" data-om-id="6cd6e833:403">Types</div><div class="fv" data-om-id="6cd6e833:404">판상형 · ㄴ자 · ㄷ자 · Y · X · 프로펠러</div></div>
-          <div class="fact" data-om-id="6cd6e833:405"><div class="fk" data-om-id="6cd6e833:406">Variant</div><div class="fv" data-om-id="6cd6e833:407"><b data-om-id="6cd6e833:408">6 종</b> 시드</div></div>
+          <div class="fact" data-om-id="6cd6e833:405"><div class="fk" data-om-id="6cd6e833:406">Variant</div><div class="fv" data-om-id="6cd6e833:407"><b data-om-id="6cd6e833:408">6 종</b> 주동</div></div>
           <div class="fact" data-om-id="6cd6e833:409"><div class="fk" data-om-id="6cd6e833:410">Ops</div><div class="fv" data-om-id="6cd6e833:411">선택 · 회전 · 조합</div></div>
         </div>
         <div class="mini-vis" data-om-id="6cd6e833:412">
@@ -1948,11 +1938,11 @@
         </div>
       </div>
 
-      <!-- Input 03 · 주동 시드 카탈로그 -->
+      <!-- Input 03 · 주동 라이브러리 -->
       <div class="in-card" data-om-id="6cd6e833:488">
         <div class="info" data-om-id="6cd6e833:489">
           <div class="n" data-om-id="6cd6e833:490"><span class="dot" data-om-id="6cd6e833:491"></span>입력</div>
-          <h3 data-om-id="6cd6e833:492">주동 시드 라이브러리</h3>
+          <h3 data-om-id="6cd6e833:492">주동 라이브러리</h3>
           <div class="desc" data-om-id="6cd6e833:493">기존 사례의 평형·조합 — Claude 가 선택·회전·조합</div>
         </div>
         <div class="vis" data-om-id="6cd6e833:494">
@@ -2059,7 +2049,7 @@
   <div class="lp" data-om-id="6cd6e833:575">
     <h1 class="title" data-om-id="6cd6e833:578">여러 안을 만들어 <span class="serif" data-om-id="6cd6e833:579">비교</span></h1>
     <p class="lead" data-om-id="6cd6e833:580">
-      분당 재개발 사업지. <b data-om-id="6cd6e833:581">채광이격 실시간 검증</b>과 함께 배치대안 생성 → <b data-om-id="6cd6e833:582">한 개 안</b> 선정.
+      분당 재개발 · <b data-om-id="6cd6e833:581">채광이격 실시간 검증</b>으로 <b data-om-id="6cd6e833:582">한 안</b> 선정.
     </p>
     <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px;" data-om-id="6cd6e833:583">
       <div style="display:flex;gap:36px;padding:18px 0;border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);" data-om-id="6cd6e833:584">
@@ -2068,11 +2058,8 @@
       </div>
       <div style="padding:14px 18px;background:var(--paper-2);border-left:3px solid var(--a);border-radius:0 4px 4px 0;" data-om-id="6cd6e833:595">
         <div class="mono" style="font-size:14px;letter-spacing:0.08em;color:var(--mute);text-transform:uppercase;margin-bottom:4px;font-weight:500;" data-om-id="6cd6e833:596">바닥 도면선</div>
-        <div style="font-size:17px;line-height:1.5;color:var(--ink-2);" data-om-id="6cd6e833:597">정부가 공개하는 <b style="color:var(--ink);font-weight:600;" data-om-id="6cd6e833:598">공공데이터포털 API</b>에서 필지·도로 선을 자동 로드 — 수동 트레이스 생략.</div>
+        <div style="font-size:17px;line-height:1.5;color:var(--ink-2);" data-om-id="6cd6e833:597"><b style="color:var(--ink);font-weight:600;" data-om-id="6cd6e833:598">공공데이터포털 API</b>에서 필지·도로 자동 로드. (API = 외부에서 데이터를 끌어다 쓰는 통로)</div>
       </div>
-      <p style="font-size:18px;line-height:1.55;color:var(--mute);" data-om-id="6cd6e833:599">
-        조건이 강할수록 대안 수는 줄지만, 초기단계 <b data-om-id="6cd6e833:600">층수 · 규모 타당성 검토</b>에 유용.
-      </p>
     </div>
     <div class="lp-footer" data-om-id="6cd6e833:601">
       <div class="l" data-om-id="6cd6e833:602"><span style="color:var(--a)" data-om-id="6cd6e833:603">사례 A</span><span class="dot" data-om-id="6cd6e833:604"></span><span data-om-id="6cd6e833:605">대안 비교</span></div>
@@ -2096,9 +2083,6 @@
 <section class="slide split" data-label="Case 1 — Apartment Mass" data-screen-label="07 Case 1 — Apartment Mass" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="6" data-om-id="6cd6e833:616">
   <div class="lp" data-om-id="6cd6e833:623">
     <h1 class="title" data-om-id="6cd6e833:626">선택안에서<br data-om-id="6cd6e833:627">→ <span class="serif" data-om-id="6cd6e833:628">Rhino 매스·창</span></h1>
-    <p class="lead" data-om-id="6cd6e833:629">
-      <b data-om-id="6cd6e833:630">프롬프트 한 줄</b>로 Rhino가 매스와 창까지 자동 생성.
-    </p>
     <div class="prompt" style="margin-top:36px;" data-om-id="6cd6e833:631">
       <div class="lbl" data-om-id="6cd6e833:632">Prompt · to Claude</div>
       "선택안을 <b data-om-id="6cd6e833:633">라이노로 열어줘</b>."
@@ -2110,7 +2094,7 @@
       </li>
       <li style="font-size:21px;line-height:1.5;color:var(--ink-2);padding-left:28px;position:relative;" data-om-id="6cd6e833:638">
         <span style="position:absolute;left:0;top:14px;width:14px;height:1px;background:var(--a);" data-om-id="6cd6e833:639"></span>
-        사전 등록 <b data-om-id="6cd6e833:640">창문 모듈</b>이 채광면에 붙음
+        <b data-om-id="6cd6e833:640">창문 모듈</b>이 채광면에 자동 배치
       </li>
       <li style="font-size:21px;line-height:1.5;color:var(--ink-2);padding-left:28px;position:relative;" data-om-id="6cd6e833:641">
         <span style="position:absolute;left:0;top:14px;width:14px;height:1px;background:var(--a);" data-om-id="6cd6e833:642"></span>
@@ -2138,9 +2122,9 @@
 <!-- ══════════ 08 CASE 1 · Apartment — CAD via MCP (Split) ══════════ -->
 <section class="slide split" data-label="Case 1 — Apartment CAD" data-screen-label="08 Case 1 — Apartment CAD" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="7" data-om-id="6cd6e833:659">
   <div class="lp" data-om-id="6cd6e833:666">
-    <h1 class="title" data-om-id="6cd6e833:669">매스에서 한 걸음 더<br data-om-id="6cd6e833:670">→ <span class="serif" data-om-id="6cd6e833:671">CAD 도면</span></h1>
+    <h1 class="title" data-om-id="6cd6e833:669">CAD ↔ <span class="serif" data-om-id="6cd6e833:671">라이노 동시 제어</span></h1>
     <p class="lead" data-om-id="6cd6e833:672">
-      <b data-om-id="6cd6e833:673">같은 MCP 프로토콜</b>로 Claude가 CAD까지 직접 제어 — 매스와 도면이 한 흐름.
+      CAD 선을 가져와 라이노 매스에 정렬 — <b data-om-id="6cd6e833:673">두 프로그램을 한 줄로</b>.
     </p>
     <div class="prompt" style="margin-top:36px;" data-om-id="6cd6e833:674">
       <div class="lbl" data-om-id="6cd6e833:675">Prompt · to Claude</div>
@@ -2149,11 +2133,7 @@
     <ul style="list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:14px;" data-om-id="6cd6e833:679">
       <li style="font-size:21px;line-height:1.5;color:var(--ink-2);padding-left:28px;position:relative;" data-om-id="6cd6e833:680">
         <span style="position:absolute;left:0;top:14px;width:14px;height:1px;background:var(--a);" data-om-id="6cd6e833:681"></span>
-        매스 → <b data-om-id="6cd6e833:682">CAD 자동 정렬</b>
-      </li>
-      <li style="font-size:21px;line-height:1.5;color:var(--ink-2);padding-left:28px;position:relative;" data-om-id="6cd6e833:683">
-        <span style="position:absolute;left:0;top:14px;width:14px;height:1px;background:var(--a);" data-om-id="6cd6e833:684"></span>
-        도면 작업 <b data-om-id="6cd6e833:685">반복 제거</b>
+        프로그램 간 <b data-om-id="6cd6e833:682">수동 이동 제거</b>
       </li>
       <li style="font-size:21px;line-height:1.5;color:var(--ink-2);padding-left:28px;position:relative;" data-om-id="6cd6e833:686">
         <span style="position:absolute;left:0;top:14px;width:14px;height:1px;background:var(--a);" data-om-id="6cd6e833:687"></span>
@@ -2182,15 +2162,6 @@
 <section class="slide split" data-label="Case 1 — Apartment Wrap · Plan" data-screen-label="09 Case 1 — Apartment Wrap · Plan" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="8" data-om-id="6cd6e833:704">
   <div class="lp" data-om-id="6cd6e833:712">
     <h1 class="title" data-om-id="6cd6e833:715">최종 <span class="serif" data-om-id="6cd6e833:716">배치도</span></h1>
-    <p class="lead" data-om-id="6cd6e833:717">
-      규모검토 → 매스 → 도면. <b data-om-id="6cd6e833:718">2D 배치도</b>로 결과 확정.
-    </p>
-    <div style="margin-top:32px;display:flex;flex-direction:column;gap:14px;" data-om-id="6cd6e833:719">
-      <div style="display:flex;gap:24px;padding:18px 0;border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);" data-om-id="6cd6e833:720">
-        <div data-om-id="6cd6e833:721"><div class="mono" style="font-size:17px;letter-spacing:0.06em;color:var(--ink-2);text-transform:uppercase;margin-bottom:10px;font-weight:500;" data-om-id="6cd6e833:722">Site</div><div style="font-size:30px;font-weight:500;letter-spacing:-0.02em;" data-om-id="6cd6e833:723">17,842<span style="font-size:18px;color:var(--mute);margin-left:4px;" data-om-id="6cd6e833:724">㎡</span></div></div>
-        <div data-om-id="6cd6e833:725"><div class="mono" style="font-size:17px;letter-spacing:0.06em;color:var(--ink-2);text-transform:uppercase;margin-bottom:10px;font-weight:500;" data-om-id="6cd6e833:726">Units</div><div style="font-size:30px;font-weight:500;letter-spacing:-0.02em;" data-om-id="6cd6e833:727">850<span style="font-size:18px;color:var(--mute);margin-left:4px;" data-om-id="6cd6e833:728">세대</span></div></div>
-      </div>
-    </div>
     <div class="lp-footer" data-om-id="6cd6e833:734">
       <div class="l" data-om-id="6cd6e833:735"><span style="color:var(--a)" data-om-id="6cd6e833:736">사례 A</span><span class="dot" data-om-id="6cd6e833:737"></span><span data-om-id="6cd6e833:738">배치도</span></div>
       <span class="num" data-om-id="6cd6e833:739">09</span>
@@ -2212,13 +2183,7 @@
 <!-- ══════════ 10 CASE 1 · Apartment — WRAP · 조감도 CG (Split) ══════════ -->
 <section class="slide split" data-label="Case 1 — Apartment Wrap · Aerial" data-screen-label="10 Case 1 — Apartment Wrap · Aerial" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="9" data-om-id="6cd6e833:749">
   <div class="lp" data-om-id="6cd6e833:757">
-    <h1 class="title" data-om-id="6cd6e833:760">최종 <span class="serif" data-om-id="6cd6e833:761">조감도 CG</span></h1>
-    <p class="lead" data-om-id="6cd6e833:762">
-      검토 확정안 기반의 <b data-om-id="6cd6e833:763">조감 시각화</b>.
-    </p>
-    <p style="margin-top:28px;font-size:21px;line-height:1.55;color:var(--ink-2);" data-om-id="6cd6e833:773">
-      다음은 주상복합 — <b style="color:var(--ink);font-weight:600;" data-om-id="6cd6e833:774">이 구조 그대로 적용</b>.
-    </p>
+    <h1 class="title" data-om-id="6cd6e833:760">조감도 CG · <span class="serif" data-om-id="6cd6e833:761">내부 작업</span></h1>
     <div class="lp-footer" data-om-id="6cd6e833:775">
       <div class="l" data-om-id="6cd6e833:776"><span style="color:var(--a)" data-om-id="6cd6e833:777">사례 A</span><span class="dot" data-om-id="6cd6e833:778"></span><span data-om-id="6cd6e833:779">조감도 CG</span></div>
       <span class="num" data-om-id="6cd6e833:780">10</span>
@@ -2226,7 +2191,7 @@
   </div>
   <div class="rp" data-om-id="6cd6e833:781">
     <div class="stage-bg" data-om-id="6cd6e833:782"></div>
-    <div class="chip" data-om-id="6cd6e833:783"><span class="dot" data-om-id="6cd6e833:784"></span>Output · 조감도 CG (A3)</div>
+    <div class="chip" data-om-id="6cd6e833:783"><span class="dot" data-om-id="6cd6e833:784"></span>Output · 내부 CG</div>
     <div class="media" data-om-id="6cd6e833:785">
       <img src="assets/seq-wrap-aerial.jpg?v8b" alt="조감도 CG" style="object-fit:contain;background:var(--paper-2);" data-om-id="6cd6e833:786">
     </div>
@@ -2240,15 +2205,18 @@
 <!-- ══════════ 10 CASE 2 · Mixed-use — RANKING (Split, video dominant) ══════════ -->
 <section class="slide split" data-label="Case 2 — Mixed-use Ranking" data-screen-label="11 Case 2 — Mixed-use Ranking" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="10" data-om-id="6cd6e833:790">
   <div class="lp" data-om-id="6cd6e833:795">
-    <h1 class="title" data-om-id="6cd6e833:798">주상복합 · <span class="serif" data-om-id="6cd6e833:799">바다 조망 + 남향</span></h1>
+    <h1 class="title" data-om-id="6cd6e833:798">주상복합 · <span class="serif" data-om-id="6cd6e833:799">남향 + 바다 조망</span></h1>
     <p class="lead" data-om-id="6cd6e833:800">
-      상업지역이라 <b data-om-id="6cd6e833:801">채광이격은 미적용</b>. 대신 <b data-om-id="6cd6e833:802">남향 + 동쪽 바다 조망</b> 동시 만족이 핵심.
+      상업지역 · <b data-om-id="6cd6e833:801">채광이격 미적용</b>, <b data-om-id="6cd6e833:802">두 조건 동시 만족</b>이 핵심.
     </p>
 
     <div style="margin-top:32px;display:flex;flex-direction:column;gap:16px;" data-om-id="6cd6e833:803">
-      <div style="display:flex;gap:24px;padding:20px 0;border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);" data-om-id="6cd6e833:804">
-        <div data-om-id="6cd6e833:805"><div class="mono" style="font-size:17px;letter-spacing:0.06em;color:var(--ink-2);text-transform:uppercase;margin-bottom:10px;font-weight:500;" data-om-id="6cd6e833:806">Site</div><div style="font-size:28px;font-weight:500;letter-spacing:-0.02em;line-height:1.15;" data-om-id="6cd6e833:807">주상복합 · 2동<br data-om-id="6cd6e833:808">상업지역</div></div>
-        <div data-om-id="6cd6e833:809"><div class="mono" style="font-size:17px;letter-spacing:0.06em;color:var(--ink-2);text-transform:uppercase;margin-bottom:10px;font-weight:500;" data-om-id="6cd6e833:810">Key</div><div style="font-size:28px;font-weight:500;letter-spacing:-0.02em;line-height:1.15;" data-om-id="6cd6e833:811">남향 + 바다 조망<br data-om-id="6cd6e833:812">동시 만족</div></div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-2);font-weight:500;">
+        <span style="padding:6px 12px;background:var(--paper-2);border-radius:2px;">① 대안 리스트</span>
+        <span style="color:var(--mute-2);">→</span>
+        <span style="padding:6px 12px;background:var(--paper-2);border-radius:2px;">② 한눈 비교</span>
+        <span style="color:var(--mute-2);">→</span>
+        <span style="padding:6px 12px;background:var(--paper-2);border-radius:2px;">③ Rhino 매스</span>
       </div>
 
       <div style="margin-top:8px;" data-om-id="6cd6e833:813">
@@ -2297,23 +2265,15 @@
 <!-- ══════════ 11 CASE 2 · Mixed-use — MASS (Split, video dominant) ══════════ -->
 <section class="slide split" data-label="Case 2 — Mixed-use Mass" data-screen-label="12 Case 2 — Mixed-use Mass" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="11" data-om-id="6cd6e833:849">
   <div class="lp" data-om-id="6cd6e833:854">
-    <h1 class="title" data-om-id="6cd6e833:857">추천안 중 하나를<br data-om-id="6cd6e833:858">→ <span class="serif" data-om-id="6cd6e833:859">Rhino 매스</span></h1>
+    <h1 class="title" data-om-id="6cd6e833:857">추천안 → <span class="serif" data-om-id="6cd6e833:859">Rhino 매스</span></h1>
     <p class="lead" data-om-id="6cd6e833:860">
-      정량 기준(<b data-om-id="6cd6e833:861">남향 · 바다 조망</b>)으로 <b data-om-id="6cd6e833:862">추천안</b>이 도출되면,<br data-om-id="6cd6e833:863">한 안을 선택해 같은 프롬프트로 라이노 매스까지.
+      <b data-om-id="6cd6e833:861">남향 · 바다 조망</b> 정량 기준으로 한 안을 골라, 같은 프롬프트로 <b data-om-id="6cd6e833:862">매스까지</b>.
     </p>
     <div class="prompt" style="margin-top:36px;" data-om-id="6cd6e833:864">
       <div class="lbl" data-om-id="6cd6e833:865">Prompt · to Claude</div>
       "선택안을 <b data-om-id="6cd6e833:866">라이노로 열어줘</b>."
     </div>
     <ul style="list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:14px;" data-om-id="6cd6e833:867">
-      <li style="font-size:21px;line-height:1.5;color:var(--ink-2);padding-left:28px;position:relative;" data-om-id="6cd6e833:868">
-        <span style="position:absolute;left:0;top:14px;width:14px;height:1px;background:var(--a);" data-om-id="6cd6e833:869"></span>
-        정량 기준으로 <b data-om-id="6cd6e833:870">추천안 자동 도출</b>
-      </li>
-      <li style="font-size:21px;line-height:1.5;color:var(--ink-2);padding-left:28px;position:relative;" data-om-id="6cd6e833:871">
-        <span style="position:absolute;left:0;top:14px;width:14px;height:1px;background:var(--a);" data-om-id="6cd6e833:872"></span>
-        추천안 중 한 안 → <b data-om-id="6cd6e833:873">매스 자동 생성</b>
-      </li>
       <li style="font-size:21px;line-height:1.5;color:var(--ink-2);padding-left:28px;position:relative;" data-om-id="6cd6e833:874">
         <span style="position:absolute;left:0;top:14px;width:14px;height:1px;background:var(--a);" data-om-id="6cd6e833:875"></span>
         다른 대안도 <b data-om-id="6cd6e833:876">같은 흐름</b>으로 즉시 비교
@@ -2340,7 +2300,7 @@
 <!-- ══════════ 12 CHAPTER · Track B ══════════ -->
 <section class="slide chapter" data-label="Track B Chapter" data-screen-label="13 Track B Chapter" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="12" data-om-id="6cd6e833:898">
   <div class="chp-num" data-om-id="6cd6e833:899"><span class="bar" data-om-id="6cd6e833:900"></span><span class="label" data-om-id="6cd6e833:901">두 번째 사례 · 이미지 · 영상 생성</span></div>
-  <h1 data-om-id="6cd6e833:902">이미지 한 장으로<br data-om-id="6cd6e833:903"><span class="serif accent" data-om-id="6cd6e833:904">투시·짧은 영상</span>까지</h1>
+  <h1 data-om-id="6cd6e833:902">이미지 한 장<br data-om-id="6cd6e833:903">→ <span class="serif accent" data-om-id="6cd6e833:904">영상까지</span></h1>
   <div class="footer" data-om-id="6cd6e833:908">
     <div class="l" data-om-id="6cd6e833:909"><span style="color:var(--b)" data-om-id="6cd6e833:910">사례 B</span><span class="dot" data-om-id="6cd6e833:911"></span><span data-om-id="6cd6e833:912">Freepik · 나노바나나 · Kling</span></div>
     <span class="num" data-om-id="6cd6e833:913">13</span>
@@ -2350,10 +2310,7 @@
 <!-- ══════════ 13 Track B · Method (Split, video dominant) ══════════ -->
 <section class="slide split" data-label="Track B Method" data-screen-label="14 Track B Method" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="13" data-om-id="6cd6e833:914">
   <div class="lp" data-om-id="6cd6e833:915">
-    <h1 class="title" data-om-id="6cd6e833:919">Freepik,<br data-om-id="6cd6e833:920"><span class="serif" data-om-id="6cd6e833:921">클릭 세 번</span>이면 끝</h1>
-    <p class="lead" data-om-id="6cd6e833:922">
-      모델 고르고 · 기준 이미지 올리고 · 프롬프트 쓰고 Generate.
-    </p>
+    <h1 class="title" data-om-id="6cd6e833:919">Freepik · <span class="serif" data-om-id="6cd6e833:921">3단계로 끝</span></h1>
     <div style="margin-top:40px;display:flex;flex-direction:column;gap:20px;" data-om-id="6cd6e833:923">
       <div style="display:flex;gap:20px;align-items:flex-start;" data-om-id="6cd6e833:924">
         <span style="flex:0 0 44px;height:44px;border-radius:50%;background:var(--b-soft);color:var(--b);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono','Pretendard Variable','Pretendard','Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',monospace;font-size:16px;font-weight:500;" data-om-id="6cd6e833:925">1</span>
@@ -2366,14 +2323,14 @@
         <span style="flex:0 0 44px;height:44px;border-radius:50%;background:var(--b-soft);color:var(--b);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono','Pretendard Variable','Pretendard','Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',monospace;font-size:16px;font-weight:500;" data-om-id="6cd6e833:930">2</span>
         <div style="padding-top:8px;" data-om-id="6cd6e833:931">
           <div style="font-size:23px;font-weight:600;margin-bottom:6px;letter-spacing:-0.01em;" data-om-id="6cd6e833:932">기준 이미지 + 프롬프트</div>
-          <div style="font-size:18px;color:var(--mute);line-height:1.5;" data-om-id="6cd6e833:933"><b data-om-id="6cd6e833:934">"아이들을 활기차게"</b> 같은 단순한 말이면 충분 · 챗봇으로 다듬어도 OK</div>
+          <div style="font-size:18px;color:var(--mute);line-height:1.5;" data-om-id="6cd6e833:933">레퍼런스 + <b data-om-id="6cd6e833:934">한 줄 프롬프트</b></div>
         </div>
       </div>
       <div style="display:flex;gap:20px;align-items:flex-start;" data-om-id="6cd6e833:935">
         <span style="flex:0 0 44px;height:44px;border-radius:50%;background:var(--b-soft);color:var(--b);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono','Pretendard Variable','Pretendard','Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',monospace;font-size:16px;font-weight:500;" data-om-id="6cd6e833:936">3</span>
         <div style="padding-top:8px;" data-om-id="6cd6e833:937">
           <div style="font-size:23px;font-weight:600;margin-bottom:6px;letter-spacing:-0.01em;" data-om-id="6cd6e833:938">Generate · 결과 확인</div>
-          <div style="font-size:18px;color:var(--mute);line-height:1.5;" data-om-id="6cd6e833:939">아쉬우면 프롬프트만 바꿔 다시</div>
+          <div style="font-size:18px;color:var(--mute);line-height:1.5;" data-om-id="6cd6e833:939">Generate → <b data-om-id="6cd6e833:939b">연출만 바꿔 변주</b></div>
         </div>
       </div>
     </div>
@@ -2399,15 +2356,12 @@
 <!-- ══════════ 14 Track B · CASE Scene Direction (Split, video dominant) — 같은 공간 · 다른 연출 · 3 영상 ══════════ -->
 <section class="slide split" data-label="Case — Scene Direction" data-screen-label="15 Case — Scene Direction" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="14" data-autochain="true" data-om-id="6cd6e833:956">
   <div class="lp" data-om-id="6cd6e833:963">
-    <h1 class="title" data-om-id="6cd6e833:966">같은 공간<br data-om-id="6cd6e833:967">→ <span class="serif" data-om-id="6cd6e833:968">연출 · 각도 · 영상</span></h1>
-    <p class="lead" data-om-id="6cd6e833:969">
-      같은 공간에 <b data-om-id="6cd6e833:970">다른 연출</b> → 같은 인물로 <b data-om-id="6cd6e833:971">각도 변주</b> → Kling으로 <b data-om-id="6cd6e833:972">짧은 영상</b>까지.
-    </p>
+    <h1 class="title" data-om-id="6cd6e833:966">같은 공간 · <span class="serif" data-om-id="6cd6e833:968">다른 연출</span></h1>
     <div class="prompt b" style="margin-top:36px;" data-om-id="6cd6e833:973">
       <div class="lbl" data-om-id="6cd6e833:974">Prompts (3-step)</div>
-      01 · "같은 공간에 <b data-om-id="6cd6e833:975">미끄럼틀 · 클라이밍</b>하는 아이들."<br data-om-id="6cd6e833:976">
-      02 · "클라이밍하는 아이 이미지를 <b data-om-id="6cd6e833:977">다양한 각도</b>로."<br data-om-id="6cd6e833:978">
-      03 · Kling으로 전환 · "<b data-om-id="6cd6e833:979">5초 영상</b>으로 만들어줘."
+      01 · <b data-om-id="6cd6e833:975">미끄럼틀 · 클라이밍</b>하는 아이들<br data-om-id="6cd6e833:976">
+      02 · 같은 인물, <b data-om-id="6cd6e833:977">각도 변주</b><br data-om-id="6cd6e833:978">
+      03 · Kling <b data-om-id="6cd6e833:979">5초 영상</b>
     </div>
     <div class="lp-footer" data-om-id="6cd6e833:980">
       <div class="l" data-om-id="6cd6e833:981"><span style="color:var(--b)" data-om-id="6cd6e833:982">사례 B</span><span class="dot" data-om-id="6cd6e833:983"></span><span data-om-id="6cd6e833:984">연출 연작</span></div>
@@ -2432,13 +2386,10 @@
 <section class="slide split" data-label="Case — Video" data-screen-label="16 Case — Video" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="15" data-om-id="6cd6e833:1035">
   <div class="lp" data-om-id="6cd6e833:1042">
     <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.1em;color:var(--mute);text-transform:uppercase;margin-bottom:10px;">Project · 목동 5단지 재건축</div>
-    <h1 class="title" data-om-id="6cd6e833:1045">앵글 이미지<br data-om-id="6cd6e833:1046">→ <span class="serif" data-om-id="6cd6e833:1047">5초 영상</span></h1>
-    <p class="lead" data-om-id="6cd6e833:1048">
-      이미지 한 장에서 <b data-om-id="6cd6e833:1049">각도를 변주</b>해 두 프레임 → <b data-om-id="6cd6e833:1050">5초짜리 영상</b>. 중간 프레임은 AI가 메움.
-    </p>
+    <h1 class="title" data-om-id="6cd6e833:1045">시작·끝 프레임<br data-om-id="6cd6e833:1046">→ <span class="serif" data-om-id="6cd6e833:1047">5초 영상</span></h1>
     <div class="prompt b" style="margin-top:36px;" data-om-id="6cd6e833:1051">
       <div class="lbl" data-om-id="6cd6e833:1052">Prompt</div>
-      "시작 · 끝 프레임을 자연스럽게 연결,<br data-om-id="6cd6e833:1053"><b data-om-id="6cd6e833:1054">5초 영상</b> · 카메라 이동 부드럽게."
+      "두 프레임을 <b data-om-id="6cd6e833:1054">부드럽게 연결</b>."
     </div>
     <div style="margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:10px;" data-om-id="6cd6e833:1055">
       <div style="padding:16px;background:#fff;border:1px solid var(--line);border-radius:4px;" data-om-id="6cd6e833:1056">
@@ -2472,22 +2423,22 @@
 <section class="slide split" data-label="Case — Screen to AI" data-screen-label="17 Case — Screen to AI" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="16" data-om-id="6cd6e833:1400">
   <div class="lp" data-om-id="6cd6e833:1401">
     <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.1em;color:var(--mute);text-transform:uppercase;margin-bottom:10px;">Project · 목동 14단지 재건축</div>
-    <h1 class="title" data-om-id="6cd6e833:1402">작업 화면<br data-om-id="6cd6e833:1403">→ <span class="serif" data-om-id="6cd6e833:1404">AI 투시 · 영상</span></h1>
+    <h1 class="title" data-om-id="6cd6e833:1402">CG 한 장에서<br data-om-id="6cd6e833:1403">→ <span class="serif" data-om-id="6cd6e833:1404">AI 투시 · 영상</span></h1>
     <p class="lead" data-om-id="6cd6e833:1405">
-      실제 작업 중인 <b data-om-id="6cd6e833:1406">3D 화면</b>을 바로 AI에 넣어 <b data-om-id="6cd6e833:1407">사실적 투시</b>로, 그리고 <b data-om-id="6cd6e833:1408">영상</b>까지.
+      내부 CG 투시도 한 장으로, <b data-om-id="6cd6e833:1407">다른 각도까지 AI로 생성</b>하고 Kling으로 <b data-om-id="6cd6e833:1408">영상</b>까지.
     </p>
     <div class="prompt b" style="margin-top:28px;" data-om-id="6cd6e833:1409">
       <div class="lbl" data-om-id="6cd6e833:1410">Prompt</div>
-      "작업 화면을 <b data-om-id="6cd6e833:1411">눈높이 투시</b>로 · 재질·조명 사실적.<br data-om-id="6cd6e833:1412">Kling으로 <b data-om-id="6cd6e833:1413">5초 영상</b>."
+      "CG 한 장 → <b data-om-id="6cd6e833:1411">다른 각도 AI 투시</b> → Kling <b data-om-id="6cd6e833:1413">영상</b>."
     </div>
     <div style="margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:10px;" data-om-id="6cd6e833:1414">
       <div style="padding:16px;background:#fff;border:1px solid var(--line);border-radius:4px;" data-om-id="6cd6e833:1415">
-        <div class="mono" style="font-size:17px;letter-spacing:0.06em;color:var(--ink-2);text-transform:uppercase;margin-bottom:10px;font-weight:500;" data-om-id="6cd6e833:1416">Source</div>
-        <div style="height:120px;overflow:hidden;border-radius:2px;" data-om-id="6cd6e833:1417"><img src="assets/seq-17-src.png" alt="3D 작업 화면" style="width:100%;height:100%;object-fit:cover;display:block;" data-om-id="6cd6e833:1418"></div>
+        <div class="mono" style="font-size:17px;letter-spacing:0.06em;color:var(--ink-2);text-transform:uppercase;margin-bottom:10px;font-weight:500;" data-om-id="6cd6e833:1416">원본 CG 투시도</div>
+        <div style="height:120px;overflow:hidden;border-radius:2px;" data-om-id="6cd6e833:1417"><img src="assets/seq-17-src.png" alt="원본 CG 투시도" style="width:100%;height:100%;object-fit:cover;display:block;" data-om-id="6cd6e833:1418"></div>
       </div>
       <div style="padding:16px;background:#fff;border:1px solid var(--line);border-radius:4px;" data-om-id="6cd6e833:1419">
-        <div class="mono" style="font-size:17px;letter-spacing:0.06em;color:var(--ink-2);text-transform:uppercase;margin-bottom:10px;font-weight:500;" data-om-id="6cd6e833:1420">AI Image</div>
-        <div style="height:120px;overflow:hidden;border-radius:2px;" data-om-id="6cd6e833:1421"><img src="assets/seq-17-ai.png" alt="AI 투시" style="width:100%;height:100%;object-fit:cover;display:block;" data-om-id="6cd6e833:1422"></div>
+        <div class="mono" style="font-size:17px;letter-spacing:0.06em;color:var(--ink-2);text-transform:uppercase;margin-bottom:10px;font-weight:500;" data-om-id="6cd6e833:1420">AI 다른 각도 투시</div>
+        <div style="height:120px;overflow:hidden;border-radius:2px;" data-om-id="6cd6e833:1421"><img src="assets/seq-17-ai.png" alt="AI 다른 각도 투시" style="width:100%;height:100%;object-fit:cover;display:block;" data-om-id="6cd6e833:1422"></div>
       </div>
     </div>
     <div class="lp-footer" data-om-id="6cd6e833:1423">
@@ -2502,7 +2453,7 @@
       <video src="assets/seq-17.mp4" muted="" playsinline="" preload="metadata" data-om-id="6cd6e833:1434"></video>
     </div>
     <div class="cap" data-om-id="6cd6e833:1435">
-      <span class="t" data-om-id="6cd6e833:1436">작업 화면 기반 · AI 투시 영상</span>
+      <span class="t" data-om-id="6cd6e833:1436">다른 각도 AI 투시 · 영상</span>
       <span data-om-id="6cd6e833:1437">나노바나나 · Kling</span>
     </div>
   </div>
@@ -2512,22 +2463,19 @@
 <section class="slide split" data-label="Case — Plan to Perspective" data-screen-label="18 Case — Plan to Perspective" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="17" data-om-id="6cd6e833:997">
   <div class="lp" data-om-id="6cd6e833:1004">
     <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.1em;color:var(--mute);text-transform:uppercase;margin-bottom:10px;">Project · 목동 14단지 재건축</div>
-    <h1 class="title" data-om-id="6cd6e833:1007">탑뷰 한 장<br data-om-id="6cd6e833:1008">→ <span class="serif" data-om-id="6cd6e833:1009">조감 투시 변환</span></h1>
-    <p class="lead" data-om-id="6cd6e833:1010">
-      탑뷰 → <b data-om-id="6cd6e833:1011">조감 투시</b>. 시작·끝 프레임을 넣으면 사이는 영상으로 자연스럽게 연결.
-    </p>
+    <h1 class="title" data-om-id="6cd6e833:1007">배치도<br data-om-id="6cd6e833:1008">→ <span class="serif" data-om-id="6cd6e833:1009">조감 영상</span></h1>
     <div class="prompt b" style="margin-top:28px;" data-om-id="6cd6e833:1012">
       <div class="lbl" data-om-id="6cd6e833:1013">Prompt</div>
-      "탑뷰에서 <b data-om-id="6cd6e833:1014">조감 투시</b>로 카메라 이동 · 부드러운 전환."
+      "배치도 → <b data-om-id="6cd6e833:1014">조감</b>, 카메라 부드럽게."
     </div>
     <div style="margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:10px;" data-om-id="6cd6e833:1016">
       <div style="padding:16px;background:#fff;border:1px solid var(--line);border-radius:4px;" data-om-id="6cd6e833:1016-s">
-        <div class="mono" style="font-size:17px;letter-spacing:0.06em;color:var(--ink-2);text-transform:uppercase;margin-bottom:10px;font-weight:500;" data-om-id="6cd6e833:1016-sl">Start</div>
-        <div style="height:140px;overflow:hidden;border-radius:2px;" data-om-id="6cd6e833:1016-sw"><img src="assets/seq-16-start.png" alt="탑뷰" style="width:100%;height:100%;object-fit:cover;display:block;" data-om-id="6cd6e833:1016-si"></div>
+        <div class="mono" style="font-size:17px;letter-spacing:0.06em;color:var(--ink-2);text-transform:uppercase;margin-bottom:10px;font-weight:500;" data-om-id="6cd6e833:1016-sl">Start · 배치도</div>
+        <div style="height:140px;overflow:hidden;border-radius:2px;" data-om-id="6cd6e833:1016-sw"><img src="assets/seq-16-start.png" alt="배치도" style="width:100%;height:100%;object-fit:cover;display:block;" data-om-id="6cd6e833:1016-si"></div>
       </div>
       <div style="padding:16px;background:#fff;border:1px solid var(--line);border-radius:4px;" data-om-id="6cd6e833:1018-e">
-        <div class="mono" style="font-size:17px;letter-spacing:0.06em;color:var(--ink-2);text-transform:uppercase;margin-bottom:10px;font-weight:500;" data-om-id="6cd6e833:1018-el">End</div>
-        <div style="height:140px;overflow:hidden;border-radius:2px;" data-om-id="6cd6e833:1018-ew"><img src="assets/seq-16-end.png" alt="조감 투시" style="width:100%;height:100%;object-fit:cover;display:block;" data-om-id="6cd6e833:1018-ei"></div>
+        <div class="mono" style="font-size:17px;letter-spacing:0.06em;color:var(--ink-2);text-transform:uppercase;margin-bottom:10px;font-weight:500;" data-om-id="6cd6e833:1018-el">End · 조감</div>
+        <div style="height:140px;overflow:hidden;border-radius:2px;" data-om-id="6cd6e833:1018-ew"><img src="assets/seq-16-end.png" alt="조감" style="width:100%;height:100%;object-fit:cover;display:block;" data-om-id="6cd6e833:1018-ei"></div>
       </div>
     </div>
     <div class="lp-footer" data-om-id="6cd6e833:1020">
@@ -2552,9 +2500,9 @@
 <section class="slide" data-label="Roles" data-screen-label="19 Roles" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="18" data-om-id="6cd6e833:1118">
   <div class="head" data-om-id="6cd6e833:1119">
     <div class="eyebrow" data-om-id="6cd6e833:1120">Role Division</div>
-    <h1 class="title" data-om-id="6cd6e833:1123">AI가 하는 일,<br data-om-id="6cd6e833:1124"><span class="serif" data-om-id="6cd6e833:1125">사람이 하는 일</span></h1>
+    <h1 class="title" data-om-id="6cd6e833:1123">AI = <span class="serif" data-om-id="6cd6e833:1125">시간 · 인력 · 비용 절감</span></h1>
     <p class="lead" data-om-id="6cd6e833:1126">
-      대체가 아니라 <b data-om-id="6cd6e833:1127">역할을 나누는 구조</b>. <b data-om-id="6cd6e833:1128">적은 인원에 AI를 얹어 양질의 결과물</b>, 판단과 책임은 사람 몫.
+      반복 작업이 줄면, <b data-om-id="6cd6e833:1127">비용이 줄고</b>, 사람은 <b data-om-id="6cd6e833:1128">판단에 집중</b>.
     </p>
   </div>
   <div class="body" data-om-id="6cd6e833:1129">
@@ -2563,8 +2511,7 @@
       <section class="sr-col sr-a" data-om-id="6cd6e833:1131">
         <header class="sr-hd" data-om-id="6cd6e833:1132">
           <div class="sr-lbl" data-om-id="6cd6e833:1133"><span class="sr-dot" data-om-id="6cd6e833:1134"></span>AI · 도구</div>
-          <div class="sr-hl" data-om-id="6cd6e833:1135">탐색 · 생성 · 시각화</div>
-          <div class="sr-sub" data-om-id="6cd6e833:1136">규칙이 분명한 반복, 정량으로 판단 가능한 일</div>
+          <div class="sr-hl" data-om-id="6cd6e833:1135">반복 작업 자동화</div>
         </header>
         <ol class="sr-list" data-om-id="6cd6e833:1137">
           <li data-om-id="6cd6e833:1138">
@@ -2584,12 +2531,12 @@
           <li data-om-id="6cd6e833:1148">
             <span class="sr-k" data-om-id="6cd6e833:1149">03</span>
             <div class="sr-body" data-om-id="6cd6e833:1150">
-              <h4 data-om-id="6cd6e833:1151">반복 업무 제거</h4>
+              <h4 data-om-id="6cd6e833:1151">투입 시간 단축</h4>
               <p data-om-id="6cd6e833:1152">사람은 판단과 소통에 집중할 시간 확보</p>
             </div>
           </li>
         </ol>
-        <div class="sr-tag" data-om-id="6cd6e833:1153">속도 · 물량 · 재현</div>
+        <div class="sr-tag" data-om-id="6cd6e833:1153">시간 · 인력 · 비용</div>
       </section>
 
       <!-- Divider with handoff -->
@@ -2608,8 +2555,7 @@
       <section class="sr-col sr-h" data-om-id="6cd6e833:1161">
         <header class="sr-hd" data-om-id="6cd6e833:1162">
           <div class="sr-lbl" data-om-id="6cd6e833:1163"><span class="sr-dot" data-om-id="6cd6e833:1164"></span>Senior · PM</div>
-          <div class="sr-hl" data-om-id="6cd6e833:1165">기준 · 맥락 · 책임</div>
-          <div class="sr-sub" data-om-id="6cd6e833:1166">정답이 하나가 아닌 일, 정성적 판단이 필요한 일</div>
+          <div class="sr-hl" data-om-id="6cd6e833:1165">기준 · 판단</div>
         </header>
         <ol class="sr-list" data-om-id="6cd6e833:1167">
           <li data-om-id="6cd6e833:1168">
@@ -2634,7 +2580,7 @@
             </div>
           </li>
         </ol>
-        <div class="sr-tag" data-om-id="6cd6e833:1183">판단 · 맥락 · 책임</div>
+        <div class="sr-tag" data-om-id="6cd6e833:1183">기준 · 판단</div>
       </section>
     </div>
   </div>
@@ -2648,17 +2594,14 @@
 <section class="slide" data-label="Roadmap" data-screen-label="20 Roadmap" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="19" data-om-id="6cd6e833:1190">
   <div class="head" data-om-id="6cd6e833:1191">
     <div class="eyebrow" data-om-id="6cd6e833:1192">Roadmap</div>
-    <h1 class="title" data-om-id="6cd6e833:1195">지금은 단계별로,<br data-om-id="6cd6e833:1196">다음은 <span class="serif" data-om-id="6cd6e833:1197">한 흐름 · 법규 · BIM 도면화</span></h1>
-    <p class="lead" data-om-id="6cd6e833:1198">
-      규모검토부터 시각화까지 <b data-om-id="6cd6e833:1199">한 흐름</b>으로. 나아가 <b>법규검토</b>와 <b>BIM 기반 도면화</b>까지 이어지는 프로세스.
-    </p>
+    <h1 class="title" data-om-id="6cd6e833:1195">법규검토와 <span class="serif" data-om-id="6cd6e833:1197">BIM 도면화</span>까지</h1>
   </div>
   <div class="body" data-om-id="6cd6e833:1200">
     <div class="roadmap" data-om-id="6cd6e833:1201">
       <div class="rm now" data-om-id="6cd6e833:1202">
         <div class="hd" data-om-id="6cd6e833:1203"><span class="tag" data-om-id="6cd6e833:1204">Now</span><h3 data-om-id="6cd6e833:1205">규모검토 · 매스 · 시각화</h3></div>
         <div class="items" data-om-id="6cd6e833:1206">
-          <div class="item" data-om-id="6cd6e833:1207"><h4 data-om-id="6cd6e833:1208">규모검토 · 매스</h4><p data-om-id="6cd6e833:1209">대지 · 법규 · 시드 → 안 비교 → <b data-om-id="6cd6e833:1210">Rhino 매스</b></p></div>
+          <div class="item" data-om-id="6cd6e833:1207"><h4 data-om-id="6cd6e833:1208">규모검토 · 매스</h4><p data-om-id="6cd6e833:1209">대지 · 법규 · 주동 라이브러리 → 안 비교 → <b data-om-id="6cd6e833:1210">Rhino 매스</b></p></div>
           <div class="item" data-om-id="6cd6e833:1211"><h4 data-om-id="6cd6e833:1212">시각화</h4><p data-om-id="6cd6e833:1213">투시 · 짧은 영상 · <b data-om-id="6cd6e833:1214">발주처 소통 가속</b></p></div>
         </div>
       </div>
@@ -2685,23 +2628,12 @@
 <section class="slide split" data-label="Bonus — One More Thing" data-screen-label="21 Bonus — One More Thing" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="20" data-om-id="6cd6e833:1300">
   <div class="lp" data-om-id="6cd6e833:1301">
     <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.1em;color:var(--mute);text-transform:uppercase;margin-bottom:10px;">Bonus · One More Thing</div>
-    <h1 class="title" data-om-id="6cd6e833:1302">설계 바깥까지<br data-om-id="6cd6e833:1303">→ <span class="serif" data-om-id="6cd6e833:1304">같은 방식</span></h1>
-    <p class="lead" data-om-id="6cd6e833:1305">
-      같은 MCP 프로토콜이면 <b data-om-id="6cd6e833:1306">비설계 업무</b>도 같은 흐름. 가볍게 한 예시.
-    </p>
+    <h1 class="title" data-om-id="6cd6e833:1302">Chrome도 <span class="serif" data-om-id="6cd6e833:1304">같은 방식</span></h1>
     <div class="prompt" style="margin-top:36px;" data-om-id="6cd6e833:1307">
       <div class="lbl" data-om-id="6cd6e833:1308">Prompt · to Claude</div>
       "Time에 등록된 <b data-om-id="6cd6e833:1309">근무시간 정리</b>,<br data-om-id="6cd6e833:1310">야근일은 <b data-om-id="6cd6e833:1311">야근식대 상신</b>까지 자동으로."
     </div>
     <ul style="list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:14px;" data-om-id="6cd6e833:1312">
-      <li style="font-size:21px;line-height:1.5;color:var(--ink-2);padding-left:28px;position:relative;" data-om-id="6cd6e833:1313">
-        <span style="position:absolute;left:0;top:14px;width:14px;height:1px;background:var(--a);" data-om-id="6cd6e833:1314"></span>
-        Chrome · <b data-om-id="6cd6e833:1315">브라우저 업무 자동화</b>
-      </li>
-      <li style="font-size:21px;line-height:1.5;color:var(--ink-2);padding-left:28px;position:relative;" data-om-id="6cd6e833:1316">
-        <span style="position:absolute;left:0;top:14px;width:14px;height:1px;background:var(--a);" data-om-id="6cd6e833:1317"></span>
-        반복 행정도 <b data-om-id="6cd6e833:1318">같은 프롬프트 한 줄</b>
-      </li>
       <li style="font-size:21px;line-height:1.5;color:var(--ink-2);padding-left:28px;position:relative;" data-om-id="6cd6e833:1319">
         <span style="position:absolute;left:0;top:14px;width:14px;height:1px;background:var(--a);" data-om-id="6cd6e833:1320"></span>
         설계자의 시간은 다시 <b data-om-id="6cd6e833:1321">설계로</b>
@@ -2727,9 +2659,15 @@
 
 <!-- ══════════ 22 End ══════════ -->
 <section class="slide end" data-label="End" data-screen-label="22 End" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-om-id="6cd6e833:1277">
-  <h1 data-om-id="6cd6e833:1278"><span class="serif" data-om-id="6cd6e833:1279">감사</span>합니다</h1>
-  <p class="sub" data-om-id="6cd6e833:1280">
-    설계자를 대체하는 도구가 아니라,<br data-om-id="6cd6e833:1281"><b data-om-id="6cd6e833:1282">더 많이 검토하고, 더 빠르게 설명하는</b> 도구.
+  <div style="font-family:'JetBrains Mono','Pretendard Variable','Pretendard','Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',ui-monospace,monospace;font-size:18px;letter-spacing:0.18em;color:var(--mute);text-transform:uppercase;margin-bottom:48px;display:flex;align-items:center;justify-content:center;gap:18px;">
+    <span style="display:inline-block;width:48px;height:1px;background:var(--ink-2);"></span>
+    Thank you
+    <span style="display:inline-block;width:48px;height:1px;background:var(--ink-2);"></span>
+  </div>
+  <h1 data-om-id="6cd6e833:1278"><span class="serif" data-om-id="6cd6e833:1279">감사합니다</span></h1>
+  <p class="sub" style="margin-top:8px;">
+    이상으로 발표를 <b>마치겠습니다</b>.<br>
+    앞으로도 <b>더 나은 방향</b>으로 계속 발전시키겠습니다.
   </p>
 </section>
 
