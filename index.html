@@ -606,13 +606,13 @@
   }
 
   /* ── Slide 20 Roadmap · entrance choreography ──
-     실측 큐 (2026-04 재보정 — 등장 타이밍 추가 가속, 약 2~3.5s 당김):
-        2.6s  "지금은 단계별로 나뉘어 있지만," 초입           → 좌측 Now 박스 (왼쪽에서 슬라이드 인)
-        3.8s  (전환 휴지)                                      → 화살표 페이드
-        4.6s  "앞으로는 하나의 프로세스로 묶고" 초입           → 우측 Next 박스 + item 01 (오른쪽에서)
-        6.4s  "법규검토 자동화와" 초입                         → Next item 02
-        8.4s  "BIM 도면화까지 이어가려고 합니다." 초입         → Next item 03
-        8.9s  강조 마무리                                      → title "BIM 도면화" 마커 슬라이드 */
+     실측 큐 (2026-04 3차 — 등장 타이밍 추가 가속):
+        1.2s  "지금은 단계별로 나뉘어 있지만,"                → 좌측 Now 박스 (왼쪽에서 슬라이드 인)
+        2.4s  (전환 휴지)                                      → 화살표 페이드
+        3.0s  "앞으로는 하나의 프로세스로 묶고"                → 우측 Next 박스 + item 01 (오른쪽에서)
+        4.4s  "법규검토 자동화와"                              → Next item 02
+        6.0s  "BIM 도면화까지 이어가려고 합니다."              → Next item 03
+        6.5s  강조 마무리                                      → title "BIM 도면화" 마커 슬라이드 */
   [data-screen-label="20 Roadmap"] .head .title .serif{
     position:relative; isolation:isolate; display:inline-block;
   }
@@ -623,22 +623,22 @@
     transform-origin:left center; transform:scaleX(0);
   }
   [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm.now{
-    animation: ovSlideInLeft .6s cubic-bezier(.2,.7,.2,1) 2.60s both;
+    animation: ovSlideInLeft .6s cubic-bezier(.2,.7,.2,1) 1.20s both;
   }
   [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm-arr{
-    animation: ovFadeUp .5s cubic-bezier(.2,.7,.2,1) 3.80s both;
+    animation: ovFadeUp .5s cubic-bezier(.2,.7,.2,1) 2.40s both;
   }
   [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm.next{
-    animation: ovSlideInRight .6s cubic-bezier(.2,.7,.2,1) 4.60s both;
+    animation: ovSlideInRight .6s cubic-bezier(.2,.7,.2,1) 3.00s both;
   }
   [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm.next .items .item:nth-child(2){
-    animation: ovFadeUp .5s cubic-bezier(.2,.7,.2,1) 6.40s both;
+    animation: ovFadeUp .5s cubic-bezier(.2,.7,.2,1) 4.40s both;
   }
   [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm.next .items .item:nth-child(3){
-    animation: ovFadeUp .5s cubic-bezier(.2,.7,.2,1) 8.40s both;
+    animation: ovFadeUp .5s cubic-bezier(.2,.7,.2,1) 6.00s both;
   }
   [data-screen-label="20 Roadmap"][data-deck-active] .head .title .serif::after{
-    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 8.90s both;
+    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 6.50s both;
   }
   @media (prefers-reduced-motion: reduce){
     [data-screen-label="20 Roadmap"][data-deck-active] .head .title .serif::after,
