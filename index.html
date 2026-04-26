@@ -380,11 +380,11 @@
   }
 
   /* ── Slide 04 Track A Method · entrance choreography ──
-     시나리오 (≈2.5s/줄):
-       0.0s  "첫번째 사례, 규모검토입니다."                        (intro · 타이틀만)
-       2.5s  "Claude가 조건에 맞는 대안을 추천하면,"              → Step A (대안 생성)
-       5.0s  "MCP가 그 결과를 Rhino 매스로 옮겨줍니다."           → Step B (MCP)
-       7.5s  "MCP는 Claude와 외부 도구를 이어주는 연결고리…"      (line 4 · MCP 강조 잔류) */
+     실측 큐 (≈13s):
+       0.0s   "첫번째 사례, 규모검토입니다."                       (intro · 타이틀만)
+       2.4s   "Claude가 조건에 맞는 대안을 추천하면…"             → Step A 행 + 마커
+       8.3s   "MCP가 그 결과를 Rhino 매스로 옮겨줍니다."          → Step B 행 등장 (MCP 글자만 노출)
+      13.6s   "MCP는 Claude와 외부 도구를 이어주는 연결고리…"     → Step B "MCP" 마커 슬라이드 */
   [data-screen-label="04 Track A Method"] .method-v2 .ed-row h3.flow .step.em{
     position:relative; isolation:isolate; display:inline-block;
   }
@@ -397,22 +397,22 @@
   [data-screen-label="04 Track A Method"] .method-v2 .ed-row.b h3.flow .step.em::after{ background:var(--marker-b); }
 
   [data-screen-label="04 Track A Method"][data-deck-active] .method-v2 .ed-row.a{
-    animation: ovFadeUp .6s cubic-bezier(.2,.7,.2,1) 2.50s both;
-  }
-  [data-screen-label="04 Track A Method"][data-deck-active] .method-v2 .ed-row.b{
-    animation: ovFadeUp .6s cubic-bezier(.2,.7,.2,1) 5.00s both;
+    animation: ovFadeUp .6s cubic-bezier(.2,.7,.2,1) 2.40s both;
   }
   [data-screen-label="04 Track A Method"][data-deck-active] .method-v2 .ed-row.a .tag{
     animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) 2.90s both;
   }
-  [data-screen-label="04 Track A Method"][data-deck-active] .method-v2 .ed-row.b .tag{
-    animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) 5.40s both;
-  }
   [data-screen-label="04 Track A Method"][data-deck-active] .method-v2 .ed-row.a h3.flow .step.em::after{
-    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 4.00s both;
+    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 3.40s both;
+  }
+  [data-screen-label="04 Track A Method"][data-deck-active] .method-v2 .ed-row.b{
+    animation: ovFadeUp .6s cubic-bezier(.2,.7,.2,1) 8.30s both;
+  }
+  [data-screen-label="04 Track A Method"][data-deck-active] .method-v2 .ed-row.b .tag{
+    animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) 8.80s both;
   }
   [data-screen-label="04 Track A Method"][data-deck-active] .method-v2 .ed-row.b h3.flow .step.em::after{
-    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 6.50s both;
+    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 13.60s both;
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -425,12 +425,14 @@
   }
 
   /* ── Slide 05 Track A Inputs · entrance choreography ──
-     시나리오:
-       0–3.0s "입력값은 대지, 법규, 주동 라이브러리, 이렇게 세 가지입니다."
-              → 카드 01·02·03 차례로 등장
-       3.0s   "대지는 CAD로 넣고,"                              → 카드 01 강조
-       5.5s   "법규는 용적률·세대수·층수 같은 데이터와 이격조건…" → 카드 02 강조
-       9.0s   "주동 라이브러리는 그동안 진행했던 사례 주동들…"   → 카드 03 강조 */
+     실측 큐 (≈24s):
+       0–4.8s   "입력값은 대지, 법규, 주동 라이브러리, 이렇게 세 가지입니다."
+                → 0.3 / 1.3 / 2.3s 에 카드 01·02·03 차례로 등장
+       4.8s     "대지는 CAD로 넣고, 법규는 용적률·세대수·층수…이격조건…"
+                → 5.0s 카드 01 마커, 8.8s 카드 02 마커
+      12.3s     "주동 라이브러리는 그동안 진행했던 사례 주동들을…"
+                → 12.6s 카드 03 마커
+      24.24s    슬라이드 종료 → 22.4s "최적안 도출" 강조(우측) */
   [data-screen-label="05 Track A Inputs"] .inputs-v4 .v4-card .v4-main h3{
     position:relative; isolation:isolate;
     align-self:flex-start; width:max-content; max-width:100%;
@@ -457,22 +459,22 @@
   }
 
   [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-stack .v4-card:nth-child(1) .v4-tag{
-    animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) 3.50s both;
-  }
-  [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-stack .v4-card:nth-child(2) .v4-tag{
-    animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) 5.50s both;
-  }
-  [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-stack .v4-card:nth-child(3) .v4-tag{
-    animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) 9.00s both;
+    animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) 4.50s both;
   }
   [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-stack .v4-card:nth-child(1) .v4-main h3::after{
-    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 4.00s both;
+    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 5.00s both;
+  }
+  [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-stack .v4-card:nth-child(2) .v4-tag{
+    animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) 8.30s both;
   }
   [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-stack .v4-card:nth-child(2) .v4-main h3::after{
-    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 6.00s both;
+    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 8.80s both;
+  }
+  [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-stack .v4-card:nth-child(3) .v4-tag{
+    animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) 12.10s both;
   }
   [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-stack .v4-card:nth-child(3) .v4-main h3::after{
-    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 9.50s both;
+    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 12.60s both;
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -484,6 +486,161 @@
       animation:none;
     }
     [data-screen-label="05 Track A Inputs"] .inputs-v4 .v4-card .v4-main h3::after{ transform:scaleX(1); }
+  }
+
+  /* ── Slide 05 · 마지막 강조 ── 카드 마커와 다른 톤
+     "Claude가 이걸 참고해서 …필요하면 새롭게 조합하기도 합니다." 멘트 끝에서 우측 Output 타이틀이 한 번 살아납니다.
+     슬라이드 종료(24.24s) 직전이 자연스럽도록 22.4s에 트리거.
+       22.4s : 타이틀 살짝 팝(scale)
+       22.8s : "최적안 도출"(.serif) 뒤로 terracotta 마커 슬라이드 */
+  [data-screen-label="05 Track A Inputs"] .inputs-v4 .v4-out-title{
+    position:relative; transform-origin:left center;
+  }
+  [data-screen-label="05 Track A Inputs"] .inputs-v4 .v4-out-title .serif{
+    position:relative; isolation:isolate; display:inline-block;
+  }
+  [data-screen-label="05 Track A Inputs"] .inputs-v4 .v4-out-title .serif::after{
+    content:""; position:absolute; left:-6px; right:-6px; bottom:8%;
+    height:30%; z-index:-1; border-radius:2px;
+    background:var(--marker-b);
+    transform-origin:left center; transform:scaleX(0);
+  }
+  [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-out-title{
+    animation: ovOutPop 1.1s cubic-bezier(.2,.7,.2,1) 22.40s both;
+  }
+  [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-out-title .serif::after{
+    animation: ovMarker .9s cubic-bezier(.2,.7,.2,1) 22.80s both;
+  }
+  @keyframes ovOutPop{
+    0%   { transform:scale(1); }
+    35%  { transform:scale(1.025); }
+    100% { transform:scale(1); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-out-title,
+    [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-out-title .serif::after{
+      animation:none;
+    }
+    [data-screen-label="05 Track A Inputs"] .inputs-v4 .v4-out-title .serif::after{ transform:scaleX(1); }
+  }
+
+  /* ── Split 슬라이드 (06–18, 21) · 타이틀 entrance만 ──
+     우측 영상이 함께 재생되는 동안 본문은 즉시 노출되도록 본문 안무는 두지 않습니다.
+     진입 직후 좌측 .title 한 줄만 fade-up 으로 살짝 들어옵니다. */
+  [data-screen-label="06 Case 1 — Apartment Ranking"][data-deck-active] .lp .title,
+  [data-screen-label="07 Case 1 — Apartment Mass"][data-deck-active] .lp .title,
+  [data-screen-label="08 Case 1 — Apartment CAD"][data-deck-active] .lp .title,
+  [data-screen-label="09 Case 1 — Apartment Wrap · Plan"][data-deck-active] .lp .title,
+  [data-screen-label="10 Case 1 — Apartment Wrap · Aerial"][data-deck-active] .lp .title,
+  [data-screen-label="11 Case 2 — Mixed-use Ranking"][data-deck-active] .lp .title,
+  [data-screen-label="12 Case 2 — Mixed-use Mass"][data-deck-active] .lp .title,
+  [data-screen-label="14 Track B Method"][data-deck-active] .lp .title,
+  [data-screen-label="15 Case — Scene Direction"][data-deck-active] .lp .title,
+  [data-screen-label="16 Case — Video"][data-deck-active] .lp .title,
+  [data-screen-label="17 Case — Screen to AI"][data-deck-active] .lp .title,
+  [data-screen-label="18 Case — Plan to Perspective"][data-deck-active] .lp .title,
+  [data-screen-label="21 Bonus — One More Thing"][data-deck-active] .lp .title{
+    animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .30s both;
+  }
+  @media (prefers-reduced-motion: reduce){
+    [data-screen-label="06 Case 1 — Apartment Ranking"][data-deck-active] .lp .title,
+    [data-screen-label="07 Case 1 — Apartment Mass"][data-deck-active] .lp .title,
+    [data-screen-label="08 Case 1 — Apartment CAD"][data-deck-active] .lp .title,
+    [data-screen-label="09 Case 1 — Apartment Wrap · Plan"][data-deck-active] .lp .title,
+    [data-screen-label="10 Case 1 — Apartment Wrap · Aerial"][data-deck-active] .lp .title,
+    [data-screen-label="11 Case 2 — Mixed-use Ranking"][data-deck-active] .lp .title,
+    [data-screen-label="12 Case 2 — Mixed-use Mass"][data-deck-active] .lp .title,
+    [data-screen-label="14 Track B Method"][data-deck-active] .lp .title,
+    [data-screen-label="15 Case — Scene Direction"][data-deck-active] .lp .title,
+    [data-screen-label="16 Case — Video"][data-deck-active] .lp .title,
+    [data-screen-label="17 Case — Screen to AI"][data-deck-active] .lp .title,
+    [data-screen-label="18 Case — Plan to Perspective"][data-deck-active] .lp .title,
+    [data-screen-label="21 Bonus — One More Thing"][data-deck-active] .lp .title{
+      animation:none;
+    }
+  }
+
+  /* 좌·우에서 들어오는 entrance용 keyframes (좌→오른쪽 / 우→왼쪽) */
+  @keyframes ovSlideInLeft{
+    from{ opacity:0; transform:translateX(-26px); }
+    to  { opacity:1; transform:translateX(0); }
+  }
+  @keyframes ovSlideInRight{
+    from{ opacity:0; transform:translateX(26px); }
+    to  { opacity:1; transform:translateX(0); }
+  }
+
+  /* ── Slide 19 Roles · entrance choreography ──
+     실측 큐:
+        2.9s  "AI는 반복과 정량 검토에 강하고,"          → 좌측 AI · 도구 칼럼 (왼쪽에서 슬라이드 인)
+        6.4s  "설계자는 판단과 결정에 집중합니다."        → 디바이더 + 우측 Senior·PM 칼럼 (오른쪽에서)
+       11.2s  "적은 인원으로 더 많은 안을, 더 빠르게…"   → 양쪽 sr-tag pop (강조 마무리) */
+  [data-screen-label="19 Roles"][data-deck-active] .split-roles .sr-col.sr-a{
+    animation: ovSlideInLeft .65s cubic-bezier(.2,.7,.2,1) 2.90s both;
+  }
+  [data-screen-label="19 Roles"][data-deck-active] .split-roles .sr-divider{
+    animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 6.40s both;
+  }
+  [data-screen-label="19 Roles"][data-deck-active] .split-roles .sr-col.sr-h{
+    animation: ovSlideInRight .65s cubic-bezier(.2,.7,.2,1) 6.40s both;
+  }
+  [data-screen-label="19 Roles"][data-deck-active] .split-roles .sr-col.sr-a .sr-tag,
+  [data-screen-label="19 Roles"][data-deck-active] .split-roles .sr-col.sr-h .sr-tag{
+    animation: ovPillPop .55s cubic-bezier(.2,1.4,.4,1) 11.20s both;
+  }
+  @media (prefers-reduced-motion: reduce){
+    [data-screen-label="19 Roles"][data-deck-active] .split-roles .sr-col,
+    [data-screen-label="19 Roles"][data-deck-active] .split-roles .sr-divider,
+    [data-screen-label="19 Roles"][data-deck-active] .split-roles .sr-col .sr-tag{
+      animation:none;
+    }
+  }
+
+  /* ── Slide 20 Roadmap · entrance choreography ──
+     실측 큐:
+        3.9s  "앞으로는 이 흐름을 더 연결하는 게 목표입니다."  (intro 휴지 — 시각 변화 없음)
+        5.8s  "지금은 단계별로 나뉘어 있지만,"                → 좌측 Now 박스 (왼쪽에서 슬라이드 인)
+        7.5s  (전환 휴지)                                       → 화살표 페이드
+        8.4s  "앞으로는 하나의 프로세스로 묶고"               → 우측 Next 박스 + item 01 (오른쪽에서)
+       10.2s  "법규검토 자동화와"                              → Next item 02 ("법규검토까지 연결")
+       13.4s  "BIM 도면화까지 이어가려고 합니다."              → Next item 03 ("BIM 기반 도면화")
+       13.9s  강조 마무리                                       → title의 "BIM 도면화" 마커 슬라이드 */
+  [data-screen-label="20 Roadmap"] .head .title .serif{
+    position:relative; isolation:isolate; display:inline-block;
+  }
+  [data-screen-label="20 Roadmap"] .head .title .serif::after{
+    content:""; position:absolute; left:-4px; right:-4px; bottom:8%;
+    height:32%; z-index:-1; border-radius:2px;
+    background:var(--marker-a);
+    transform-origin:left center; transform:scaleX(0);
+  }
+  [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm.now{
+    animation: ovSlideInLeft .65s cubic-bezier(.2,.7,.2,1) 5.80s both;
+  }
+  [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm-arr{
+    animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 7.50s both;
+  }
+  [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm.next{
+    animation: ovSlideInRight .65s cubic-bezier(.2,.7,.2,1) 8.40s both;
+  }
+  [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm.next .items .item:nth-child(2){
+    animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 10.20s both;
+  }
+  [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm.next .items .item:nth-child(3){
+    animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 13.40s both;
+  }
+  [data-screen-label="20 Roadmap"][data-deck-active] .head .title .serif::after{
+    animation: ovMarker .9s cubic-bezier(.2,.7,.2,1) 13.90s both;
+  }
+  @media (prefers-reduced-motion: reduce){
+    [data-screen-label="20 Roadmap"][data-deck-active] .head .title .serif::after,
+    [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm.now,
+    [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm-arr,
+    [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm.next,
+    [data-screen-label="20 Roadmap"][data-deck-active] .roadmap .rm.next .items .item{
+      animation:none;
+    }
+    [data-screen-label="20 Roadmap"] .head .title .serif::after{ transform:scaleX(1); }
   }
 
   /* ========== Slide 3 · Method Timeline (replaces .flow-2) ========== */
