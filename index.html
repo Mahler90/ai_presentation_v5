@@ -30,6 +30,10 @@
     --a-soft:oklch(0.94 0.03 250);
     --b:oklch(0.52 0.13 50);            /* Track B — terracotta */
     --b-soft:oklch(0.94 0.03 50);
+
+    /* 형광펜 마커 — 본문보다 진한 채도, 알파로 텍스트 가독성 유지 */
+    --marker-a:oklch(0.85 0.16 250 / 0.6);
+    --marker-b:oklch(0.85 0.16 50 / 0.6);
   }
 
   *{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased;}
@@ -260,6 +264,226 @@
     text-align:center; color:var(--mute-2);
     font-family:'JetBrains Mono',ui-monospace,monospace;
     font-size:16px; font-weight:400; line-height:1; padding:2px 0;
+  }
+
+  /* ── Slide 02 Overview · entrance choreography ──
+     시나리오 "첫 번째는 규모검토와 매스 모델링, 두 번째는 이미지·영상 생성" 리듬에 맞춤.
+     [data-deck-active] 가 슬라이드 진입 시 부여되며, 이탈·재진입 때마다 애니메이션이 재생된다. */
+  [data-screen-label="02 Overview"] .ov-col h2 .serif{
+    position:relative; isolation:isolate; display:inline-block;
+  }
+  [data-screen-label="02 Overview"] .ov-col h2 .serif::after{
+    content:""; position:absolute; left:-6px; right:-6px; bottom:6%;
+    height:36%; z-index:-1; border-radius:2px;
+    transform-origin:left center; transform:scaleX(0);
+  }
+  [data-screen-label="02 Overview"] .ov-col.a h2 .serif::after{ background:var(--marker-a); }
+  [data-screen-label="02 Overview"] .ov-col.b h2 .serif::after{ background:var(--marker-b); }
+
+  [data-screen-label="02 Overview"][data-deck-active] .ov-col.a{
+    animation: ovFadeUp .6s cubic-bezier(.2,.7,.2,1) .30s both;
+  }
+  [data-screen-label="02 Overview"][data-deck-active] .ov-col.b{
+    animation: ovFadeUp .6s cubic-bezier(.2,.7,.2,1) 2.80s both;
+  }
+  [data-screen-label="02 Overview"][data-deck-active] .ov-col.a .num .pill{
+    animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) .70s both;
+  }
+  [data-screen-label="02 Overview"][data-deck-active] .ov-col.b .num .pill{
+    animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) 3.20s both;
+  }
+  [data-screen-label="02 Overview"][data-deck-active] .ov-col.a h2 .serif::after{
+    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 1.70s both;
+  }
+  [data-screen-label="02 Overview"][data-deck-active] .ov-col.b h2 .serif::after{
+    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 4.20s both;
+  }
+
+  @keyframes ovFadeUp{
+    from{ opacity:0; transform:translateY(14px); }
+    to  { opacity:1; transform:translateY(0); }
+  }
+  @keyframes ovPillPop{
+    0%  { opacity:0; transform:scale(.82); }
+    60% { opacity:1; transform:scale(1.06); }
+    100%{ opacity:1; transform:scale(1); }
+  }
+  @keyframes ovMarker{
+    from{ transform:scaleX(0); }
+    to  { transform:scaleX(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    [data-screen-label="02 Overview"][data-deck-active] .ov-col.a,
+    [data-screen-label="02 Overview"][data-deck-active] .ov-col.b,
+    [data-screen-label="02 Overview"][data-deck-active] .ov-col .num .pill,
+    [data-screen-label="02 Overview"][data-deck-active] .ov-col h2 .serif::after{
+      animation:none;
+    }
+    [data-screen-label="02 Overview"] .ov-col h2 .serif::after{ transform:scaleX(1); }
+  }
+
+  /* ── Slide 03 Why · entrance choreography ──
+     시나리오 (≈2.5s/줄):
+       0.0s  "저희가 AI를 쓰는 이유는 단순합니다." (lead)
+       2.5s  "검토가 빨라집니다."                  → dial 1 (속도)
+       5.0s  "그리고 여러 안을 한꺼번에,
+              더 정확하게 비교할 수 있습니다."     → dial 2 (정확성)
+       9.5s  "무엇보다 반복 작업이 줄어들면서,
+              비용도 함께 줄어듭니다."             → dial 3 (투입비) */
+  [data-screen-label="03 Why"] .why-v1 .caption h3 .em{
+    position:relative; isolation:isolate; display:inline-block;
+  }
+  [data-screen-label="03 Why"] .why-v1 .caption h3 .em::after{
+    content:""; position:absolute; left:-6px; right:-6px; bottom:6%;
+    height:36%; z-index:-1; border-radius:2px;
+    transform-origin:left center; transform:scaleX(0);
+  }
+  [data-screen-label="03 Why"] .why-v1 .dial-col.up .caption h3 .em::after{ background:var(--marker-a); }
+  [data-screen-label="03 Why"] .why-v1 .dial-col.down .caption h3 .em::after{ background:var(--marker-b); }
+
+  [data-screen-label="03 Why"][data-deck-active] .why-v1 .dial-col:nth-child(1){
+    animation: ovFadeUp .6s cubic-bezier(.2,.7,.2,1) 2.50s both;
+  }
+  [data-screen-label="03 Why"][data-deck-active] .why-v1 .dial-col:nth-child(2){
+    animation: ovFadeUp .6s cubic-bezier(.2,.7,.2,1) 5.00s both;
+  }
+  [data-screen-label="03 Why"][data-deck-active] .why-v1 .dial-col:nth-child(3){
+    animation: ovFadeUp .6s cubic-bezier(.2,.7,.2,1) 9.50s both;
+  }
+  [data-screen-label="03 Why"][data-deck-active] .why-v1 .dial-col:nth-child(1) .tag{
+    animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) 2.90s both;
+  }
+  [data-screen-label="03 Why"][data-deck-active] .why-v1 .dial-col:nth-child(2) .tag{
+    animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) 5.40s both;
+  }
+  [data-screen-label="03 Why"][data-deck-active] .why-v1 .dial-col:nth-child(3) .tag{
+    animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) 9.90s both;
+  }
+  [data-screen-label="03 Why"][data-deck-active] .why-v1 .dial-col:nth-child(1) .caption h3 .em::after{
+    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 3.80s both;
+  }
+  [data-screen-label="03 Why"][data-deck-active] .why-v1 .dial-col:nth-child(2) .caption h3 .em::after{
+    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 7.50s both;
+  }
+  [data-screen-label="03 Why"][data-deck-active] .why-v1 .dial-col:nth-child(3) .caption h3 .em::after{
+    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 12.00s both;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    [data-screen-label="03 Why"][data-deck-active] .why-v1 .dial-col,
+    [data-screen-label="03 Why"][data-deck-active] .why-v1 .dial-col .tag,
+    [data-screen-label="03 Why"][data-deck-active] .why-v1 .caption h3 .em::after{
+      animation:none;
+    }
+    [data-screen-label="03 Why"] .why-v1 .caption h3 .em::after{ transform:scaleX(1); }
+  }
+
+  /* ── Slide 04 Track A Method · entrance choreography ──
+     시나리오 (≈2.5s/줄):
+       0.0s  "첫번째 사례, 규모검토입니다."                        (intro · 타이틀만)
+       2.5s  "Claude가 조건에 맞는 대안을 추천하면,"              → Step A (대안 생성)
+       5.0s  "MCP가 그 결과를 Rhino 매스로 옮겨줍니다."           → Step B (MCP)
+       7.5s  "MCP는 Claude와 외부 도구를 이어주는 연결고리…"      (line 4 · MCP 강조 잔류) */
+  [data-screen-label="04 Track A Method"] .method-v2 .ed-row h3.flow .step.em{
+    position:relative; isolation:isolate; display:inline-block;
+  }
+  [data-screen-label="04 Track A Method"] .method-v2 .ed-row h3.flow .step.em::after{
+    content:""; position:absolute; left:-6px; right:-6px; bottom:6%;
+    height:36%; z-index:-1; border-radius:2px;
+    transform-origin:left center; transform:scaleX(0);
+  }
+  [data-screen-label="04 Track A Method"] .method-v2 .ed-row.a h3.flow .step.em::after{ background:var(--marker-a); }
+  [data-screen-label="04 Track A Method"] .method-v2 .ed-row.b h3.flow .step.em::after{ background:var(--marker-b); }
+
+  [data-screen-label="04 Track A Method"][data-deck-active] .method-v2 .ed-row.a{
+    animation: ovFadeUp .6s cubic-bezier(.2,.7,.2,1) 2.50s both;
+  }
+  [data-screen-label="04 Track A Method"][data-deck-active] .method-v2 .ed-row.b{
+    animation: ovFadeUp .6s cubic-bezier(.2,.7,.2,1) 5.00s both;
+  }
+  [data-screen-label="04 Track A Method"][data-deck-active] .method-v2 .ed-row.a .tag{
+    animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) 2.90s both;
+  }
+  [data-screen-label="04 Track A Method"][data-deck-active] .method-v2 .ed-row.b .tag{
+    animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) 5.40s both;
+  }
+  [data-screen-label="04 Track A Method"][data-deck-active] .method-v2 .ed-row.a h3.flow .step.em::after{
+    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 4.00s both;
+  }
+  [data-screen-label="04 Track A Method"][data-deck-active] .method-v2 .ed-row.b h3.flow .step.em::after{
+    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 6.50s both;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    [data-screen-label="04 Track A Method"][data-deck-active] .method-v2 .ed-row,
+    [data-screen-label="04 Track A Method"][data-deck-active] .method-v2 .ed-row .tag,
+    [data-screen-label="04 Track A Method"][data-deck-active] .method-v2 .ed-row h3.flow .step.em::after{
+      animation:none;
+    }
+    [data-screen-label="04 Track A Method"] .method-v2 .ed-row h3.flow .step.em::after{ transform:scaleX(1); }
+  }
+
+  /* ── Slide 05 Track A Inputs · entrance choreography ──
+     시나리오:
+       0–3.0s "입력값은 대지, 법규, 주동 라이브러리, 이렇게 세 가지입니다."
+              → 카드 01·02·03 차례로 등장
+       3.0s   "대지는 CAD로 넣고,"                              → 카드 01 강조
+       5.5s   "법규는 용적률·세대수·층수 같은 데이터와 이격조건…" → 카드 02 강조
+       9.0s   "주동 라이브러리는 그동안 진행했던 사례 주동들…"   → 카드 03 강조 */
+  [data-screen-label="05 Track A Inputs"] .inputs-v4 .v4-card .v4-main h3{
+    position:relative; isolation:isolate;
+    align-self:flex-start; width:max-content; max-width:100%;
+  }
+  [data-screen-label="05 Track A Inputs"] .inputs-v4 .v4-card .v4-main h3::after{
+    content:""; position:absolute; left:-4px; right:-4px; bottom:6%;
+    height:36%; z-index:-1; border-radius:2px;
+    background:var(--marker-a);
+    transform-origin:left center; transform:scaleX(0);
+  }
+
+  [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-stack .v4-card:nth-child(1){
+    animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .30s both;
+  }
+  [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-stack .v4-card:nth-child(2){
+    animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 1.30s both;
+  }
+  [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-stack .v4-card:nth-child(3){
+    animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 2.30s both;
+  }
+  [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-bracket,
+  [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-right{
+    animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 2.80s both;
+  }
+
+  [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-stack .v4-card:nth-child(1) .v4-tag{
+    animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) 3.50s both;
+  }
+  [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-stack .v4-card:nth-child(2) .v4-tag{
+    animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) 5.50s both;
+  }
+  [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-stack .v4-card:nth-child(3) .v4-tag{
+    animation: ovPillPop .5s cubic-bezier(.2,1.4,.4,1) 9.00s both;
+  }
+  [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-stack .v4-card:nth-child(1) .v4-main h3::after{
+    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 4.00s both;
+  }
+  [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-stack .v4-card:nth-child(2) .v4-main h3::after{
+    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 6.00s both;
+  }
+  [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-stack .v4-card:nth-child(3) .v4-main h3::after{
+    animation: ovMarker .8s cubic-bezier(.2,.7,.2,1) 9.50s both;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-stack .v4-card,
+    [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-bracket,
+    [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-right,
+    [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-card .v4-tag,
+    [data-screen-label="05 Track A Inputs"][data-deck-active] .inputs-v4 .v4-card .v4-main h3::after{
+      animation:none;
+    }
+    [data-screen-label="05 Track A Inputs"] .inputs-v4 .v4-card .v4-main h3::after{ transform:scaleX(1); }
   }
 
   /* ========== Slide 3 · Method Timeline (replaces .flow-2) ========== */
