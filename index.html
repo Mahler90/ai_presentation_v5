@@ -1752,6 +1752,20 @@
   }
   .inputs-v2 .col .mini-vis svg{ width:100%; height:100%; max-height:150px; }
 
+  /* ── 정리판 (2026-04-27) · 모든 entrance 안무 강제 비활성화 ──
+     발표 종료 후 정적 데모용. 슬라이드 진입과 동시에 모든 요소가 최종 상태로 노출.
+     이 블록은 스타일시트 맨 마지막에 위치해 source-order 우선권 + !important 로
+     앞선 모든 [data-deck-active] 진입 애니메이션을 덮는다. */
+  *, *::before, *::after { animation: none !important; }
+  [data-screen-label="02 Overview"] .ov-col h2 .serif::after,
+  [data-screen-label="03 Why"] .why-v1 .caption h3 .em::after,
+  [data-screen-label="04 Track A Method"] .method-v2 .ed-row h3.flow .step.em::after,
+  [data-screen-label="05 Track A Inputs"] .inputs-v4 .v4-card .v4-main h3::after,
+  [data-screen-label="05 Track A Inputs"] .inputs-v4 .v4-out-title .serif::after,
+  [data-screen-label="19 Roles"] .head .title .serif::after,
+  [data-screen-label="20 Roadmap"] .head .title .serif::after {
+    transform: scaleX(1) !important;
+  }
 </style>
 <style id="deck-stage-print-page">@page { size: 1920px 1080px; margin: 0; } @media print { html, body { margin: 0 !important; padding: 0 !important; background: none !important; overflow: visible !important; height: auto !important; } * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }</style></head>
 <body data-cc-id="cc-1" style="background-color: rgb(255, 255, 255); cursor: crosshair;" data-om-id="6cd6e833:8">
