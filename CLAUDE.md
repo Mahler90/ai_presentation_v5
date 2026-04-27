@@ -37,11 +37,6 @@
 - [ ] 빨간 점이 `transform: scale()`로 축소된 상태에서도 마우스 정확한 위치에 표시
 - [ ] 인쇄 미리보기(Save as PDF)에서 점·오버레이 모두 숨김
 
-## 슬라이드 구조 메모
-- 21번 슬라이드 **"Bonus — One More Thing"** (Roadmap → End 사이) 도 보존 대상.
-  - 영상: `assets/seq-09-2.mp4` (31초, Chrome via MCP)
-  - 다른 톤으로 재배치하더라도 "MCP가 설계 바깥(Chrome 등)까지 같은 방식" 메시지는 유지.
-
 ## 동기화 주의
 부모 레포 `Mahler90/ai_presentation`과 수동 동기 관계입니다 (자동 sync 없음).
 - 부모 레포에서 가져올 때 본 파일(`CLAUDE.md`)과 위 두 기능을 덮어쓰지 않도록 확인.
