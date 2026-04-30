@@ -417,9 +417,15 @@
   }
   [data-screen-label$="Track A Trial"] .method-v2 .ed-row,
   [data-screen-label$="Track A Method"] .method-v2 .ed-row{
-    grid-template-columns:150px minmax(0,1fr) 360px;
+    grid-template-columns:minmax(0,1fr) 360px;
     gap:42px;
     padding:32px 0;
+  }
+  [data-screen-label$="Track A Trial"] .method-v2 .ed-row.a::after,
+  [data-screen-label$="Track A Trial"] .method-v2 .ed-row.b::before,
+  [data-screen-label$="Track A Method"] .method-v2 .ed-row.a::after,
+  [data-screen-label$="Track A Method"] .method-v2 .ed-row.b::before{
+    display:none;
   }
   [data-screen-label$="Track A Trial"] .method-v2 .ed-row .huge,
   [data-screen-label$="Track A Method"] .method-v2 .ed-row .huge{
@@ -781,6 +787,7 @@
   .closing-simple .closing-label{
     justify-content:center;
     margin-bottom:34px;
+    font-size:22px;
   }
   .closing-simple .closing-label::after{
     content:'';
@@ -792,25 +799,25 @@
     margin:0 auto 42px;
   }
   .closing-simple .closing-statement{
-    max-width:1180px;
-    margin:0 auto 30px;
-    font-size:40px;
+    max-width:1320px;
+    margin:0 auto 40px;
+    font-size:56px;
     line-height:1.5;
     color:var(--ink-2);
   }
   .closing-simple .closing-statement.small{
-    max-width:1080px;
+    max-width:1240px;
     margin-bottom:0;
-    font-size:30px;
-    line-height:1.58;
+    font-size:42px;
+    line-height:1.55;
     color:var(--ink-2);
   }
   .closing-simple .closing-coda{
-    width:min(980px,100%);
-    margin:56px auto 0;
-    padding:26px 0 0;
+    width:min(1180px,100%);
+    margin:64px auto 0;
+    padding:32px 0 0;
     border-top:1px dashed var(--line);
-    font-size:24px;
+    font-size:38px;
     line-height:1.5;
   }
 
@@ -1023,30 +1030,30 @@
   [data-screen-label$="Track A Inputs"][data-deck-active] .inputs-v4 > *{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .85s both; }
 
   /* ── 20 Tips 1 · 패널 1 → 2 (안에 op-compare 는 같이 페이드) ── */
-  [data-screen-label="20 Tips 1"][data-deck-active] .tips1-layout .ops-panel:nth-child(1){ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .85s both; }
-  [data-screen-label="20 Tips 1"][data-deck-active] .tips1-layout .ops-panel:nth-child(2){ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 1.10s both; }
+  [data-screen-label$="Tips 1"][data-deck-active] .tips1-layout .ops-panel:nth-child(1){ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .85s both; }
+  [data-screen-label$="Tips 1"][data-deck-active] .tips1-layout .ops-panel:nth-child(2){ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 1.10s both; }
 
   /* ── 21 Tips 2 · Claude.md → GitHub (라인별 캐스케이드 제거, 파일 단위만) ── */
-  [data-screen-label="21 Tips 2"][data-deck-active] .memory-system .memory-file:not(.gh){ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .85s both; }
-  [data-screen-label="21 Tips 2"][data-deck-active] .memory-system .memory-file.gh{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 1.10s both; }
+  [data-screen-label$="Tips 2"][data-deck-active] .memory-system .memory-file:not(.gh){ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .85s both; }
+  [data-screen-label$="Tips 2"][data-deck-active] .memory-system .memory-file.gh{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 1.10s both; }
 
   /* ── 22 Roles · AI(A) → divider → 사람(H) (slide-in 제거, 페이드만) ── */
-  [data-screen-label="22 Roles"][data-deck-active] .sr-col.sr-a{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .85s both; }
-  [data-screen-label="22 Roles"][data-deck-active] .sr-divider{ animation: ovFadeUp .55s ease-out 1.00s both; }
-  [data-screen-label="22 Roles"][data-deck-active] .sr-col.sr-h{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 1.10s both; }
+  [data-screen-label$="Roles"][data-deck-active] .sr-col.sr-a{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .85s both; }
+  [data-screen-label$="Roles"][data-deck-active] .sr-divider{ animation: ovFadeUp .55s ease-out 1.00s both; }
+  [data-screen-label$="Roles"][data-deck-active] .sr-col.sr-h{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 1.10s both; }
 
   /* ── 23 Closing · 발표자 메시지 → 세 가지 요지 ── */
-  [data-screen-label="23 Closing"][data-deck-active] .closing-label{ animation: ovFadeUp .5s ease-out .20s both; }
-  [data-screen-label="23 Closing"][data-deck-active] .closing-accent{ animation: ovFadeUp .45s ease-out .42s both; }
-  [data-screen-label="23 Closing"][data-deck-active] .closing-statement{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .56s both; }
-  [data-screen-label="23 Closing"][data-deck-active] .closing-point{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .82s both; }
-  [data-screen-label="23 Closing"][data-deck-active] .closing-coda{ animation: ovFadeUp .5s cubic-bezier(.2,.7,.2,1) 1.04s both; }
+  [data-screen-label$="Closing"][data-deck-active] .closing-label{ animation: ovFadeUp .5s ease-out .20s both; }
+  [data-screen-label$="Closing"][data-deck-active] .closing-accent{ animation: ovFadeUp .45s ease-out .42s both; }
+  [data-screen-label$="Closing"][data-deck-active] .closing-statement{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .56s both; }
+  [data-screen-label$="Closing"][data-deck-active] .closing-point{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .82s both; }
+  [data-screen-label$="Closing"][data-deck-active] .closing-coda{ animation: ovFadeUp .5s cubic-bezier(.2,.7,.2,1) 1.04s both; }
 
   /* ── 24 End · 감사 → sub → notes(한꺼번에) → coda ── */
-  [data-screen-label="24 End"][data-deck-active] h1{ animation: ovFadeUp .6s cubic-bezier(.2,.7,.2,1) .25s both; }
-  [data-screen-label="24 End"][data-deck-active] .sub{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .65s both; }
-  [data-screen-label="24 End"][data-deck-active] .end-note{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 1.00s both; }
-  [data-screen-label="24 End"][data-deck-active] .meta-coda{ animation: ovFadeUp .5s cubic-bezier(.2,.7,.2,1) 1.30s both; }
+  [data-screen-label$="End"][data-deck-active] h1{ animation: ovFadeUp .6s cubic-bezier(.2,.7,.2,1) .25s both; }
+  [data-screen-label$="End"][data-deck-active] .sub{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .65s both; }
+  [data-screen-label$="End"][data-deck-active] .end-note{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 1.00s both; }
+  [data-screen-label$="End"][data-deck-active] .meta-coda{ animation: ovFadeUp .5s cubic-bezier(.2,.7,.2,1) 1.30s both; }
 
   /* ══════════════════ Step Highlight (페이지 넘김으로 항목별 강조) ══════════════════
      deck-stage.js 가 .slide[data-active-step="N"] 부여 → data-step 일치 항목은 확대·전면,
@@ -1337,7 +1344,6 @@
   <div class="body-v2">
     <div class="method-v2">
       <div class="ed-row a" data-step="1">
-        <div class="huge">A</div>
         <div class="ed-main">
           <div class="tag"><span class="tag-k">기존</span><span class="sep"></span>수동 배치</div>
           <h3 class="flow"><span class="step">지적도</span><span class="arrow">→</span><span class="step">법규</span><span class="arrow">→</span><span class="step">개요</span><span class="arrow">→</span><span class="step em">직접 배치</span></h3>
@@ -1349,7 +1355,6 @@
         </div>
       </div>
       <div class="ed-row b" data-step="2">
-        <div class="huge">B</div>
         <div class="ed-main">
           <div class="tag"><span class="tag-k">Claude</span><span class="sep"></span>학습 단계</div>
           <h3 class="flow"><span class="step">과거 대지 학습</span><span class="arrow">→</span><span class="step">시도</span><span class="arrow">→</span><span class="step em">재시도</span></h3>
@@ -1374,7 +1379,6 @@
   <div class="body-v2">
     <div class="method-v2">
       <div class="ed-row a" data-step="1">
-        <div class="huge">A</div>
         <div class="ed-main">
           <div class="tag"><span class="tag-k">Step A</span><span class="sep"></span>대안 추천</div>
           <h3 class="flow"><span class="step">Claude</span><span class="arrow">→</span><span class="step em">대안 생성</span><span class="arrow">→</span><span class="step">추천</span></h3>
@@ -1386,7 +1390,6 @@
         </div>
       </div>
       <div class="ed-row b" data-step="2">
-        <div class="huge">B</div>
         <div class="ed-main">
           <div class="tag"><span class="tag-k">Step B</span><span class="sep"></span>매스 생성</div>
           <h3 class="flow"><span class="step">좌표 · 층수</span><span class="arrow">→</span><span class="step em">MCP</span><span class="arrow">→</span><span class="step">Rhino 매스</span></h3>
@@ -1547,7 +1550,6 @@
 <!-- ══════════ 10 Case 1 Wrap — Redesigned (Spec Card + Gallery) ══════════ -->
 <section class="slide split" data-screen-label="10 Case 1 Wrap">
   <div class="lp">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;color:var(--mute);text-transform:uppercase;margin-bottom:10px;">Output Review</div>
     <h1 class="title">최종 <span class="serif">배치도와 조감도</span></h1>
     <p class="lead">2D 배치도와 조감 이미지까지, <b>같은 흐름에서 한 번에 정리</b>.</p>
 
@@ -1561,10 +1563,6 @@
         <div class="v">850<span>세대</span></div>
       </div>
     </div>
-
-    <p style="margin-top:40px;font-size:20px;line-height:1.55;color:var(--ink-2);">
-      회의 의견에 맞춰 <b style="color:var(--ink);font-weight:600;">빠르게 재조정</b> 가능해야 함.
-    </p>
 
     <div class="lp-footer">
       <div class="l"><span style="color:var(--a)">사례 A</span><span class="dot"></span><span>배치도 · 조감도</span></div>
@@ -1589,7 +1587,6 @@
 <!-- ══════════ 11 APT Fieldmap (Adjust) ══════════ -->
 <section class="slide split" data-screen-label="11 APT Fieldmap">
   <div class="lp">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;color:var(--mute);text-transform:uppercase;margin-bottom:10px;">Tool · APT Fieldmap</div>
     <h1 class="title">추천안을 받아<br><span class="serif">직접 다듬는 도구</span></h1>
     <p class="lead">추천안을 더 <b>세밀하게 조정</b>해야 할 때가 많음. 직접 다듬는 <b>필드맵 도구</b>를 별도 제작.</p>
     <div style="margin-top:34px;display:flex;flex-direction:column;gap:18px;">
@@ -1635,7 +1632,6 @@
 <!-- ══════════ 11 Case 2 Mixed Use ══════════ -->
 <section class="slide split" data-screen-label="12 Case 2 Mixed Use">
   <div class="lp">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;color:var(--mute);text-transform:uppercase;margin-bottom:10px;">Case A · 부산 주상복합</div>
     <h1 class="title">남향 + 바다 조망<br><span class="serif">두 조건 만족도</span></h1>
     <p class="lead">채광이격 대신 <b>남향</b>·<b>바다 조망</b>이 핵심. 두 조건 만족도를 <b>점수순 정렬</b>.</p>
     <div style="margin-top:32px;display:flex;flex-direction:column;gap:16px;">
@@ -1699,7 +1695,6 @@
 <!-- ══════════ 14 Track B Method ══════════ -->
 <section class="slide split" data-screen-label="15 Track B Method">
   <div class="lp">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;color:var(--mute);text-transform:uppercase;margin-bottom:10px;">Method · 사례 B</div>
     <h1 class="title">Freepik 한 곳에서<br><span class="serif">이미지·영상 모델</span> 제어</h1>
     <p class="lead">이미지·영상 모델을 <b>한 곳에서 제어</b>. <b>나노바나나 · 클링</b> 사용.</p>
     <div style="margin-top:40px;display:flex;flex-direction:column;gap:20px;">
@@ -1764,7 +1759,6 @@
 <!-- ══════════ 16 Case Video ══════════ -->
 <section class="slide split" data-screen-label="17 Case Video">
   <div class="lp">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;color:var(--mute);text-transform:uppercase;margin-bottom:10px;">Project · 목동 재건축</div>
     <h1 class="title">시작·끝 프레임만,<br><span class="serif">사이는 AI가 채움</span></h1>
     <p class="lead">시작 프레임과 끝 프레임만 만들면, 그 사이의 <b>카메라 이동</b>은 <b>AI가 자연스럽게</b> 채움.</p>
     <div class="prompt b" style="margin-top:36px;">
@@ -1793,7 +1787,6 @@
 <!-- ══════════ 17 Case Screen to AI ══════════ -->
 <section class="slide split" data-screen-label="18 Case Screen to AI">
   <div class="lp">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;color:var(--mute);text-transform:uppercase;margin-bottom:10px;">Project · 목동 14단지 재건축</div>
     <h1 class="title">완성 투시도 + AI 변환<br>→ <span class="serif">영상</span></h1>
     <p class="lead">완성 투시도와 <b>AI 변환 이미지</b> 두 장으로 영상. <b>구도·매스는 그대로</b>, 재질·조명만 사실적으로.</p>
     <div class="prompt b" style="margin-top:28px;">
@@ -1822,7 +1815,6 @@
 <!-- ══════════ 18 Case Plan to Perspective ══════════ -->
 <section class="slide split" data-screen-label="19 Case Plan to Perspective">
   <div class="lp">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;color:var(--mute);text-transform:uppercase;margin-bottom:10px;">Project · 목동 14단지 재건축</div>
     <h1 class="title">배치도 + 조감도<br>→ <span class="serif">현상설계 영상</span></h1>
     <p class="lead">배치도와 조감도 두 장이면, <b>카메라 이동</b>은 AI가 연결. <b>현상설계 영상</b>에 그대로 활용.</p>
     <div class="prompt b" style="margin-top:28px;">
@@ -1841,7 +1833,6 @@
 <!-- ══════════ 20 Tips 1 (2-card · 기준 · 라이브러리) ══════════ -->
 <section class="slide" data-screen-label="20 Tips 1">
   <div class="head">
-    <div class="eyebrow">Practical Tips · 1/2 · 기준과 라이브러리</div>
     <h1 class="title">한 달 동안 만들어본<br><span class="serif">나만의 작업 기준</span></h1>
     <p class="lead"><b>바뀌는 것만</b> 짧게, 자주 쓰는 것은 <b>분류해서</b> 재사용.</p>
   </div>
@@ -1906,7 +1897,6 @@
 <!-- ══════════ 21 Tips 2 (Claude.md ↔ GitHub · 병렬 도구 · v17) ══════════ -->
 <section class="slide" data-screen-label="21 Tips 2">
   <div class="head">
-    <div class="eyebrow">Practical Tips · 2/2 · 꼭 함께 써야 하는 두 가지</div>
     <h1 class="title"><span class="mono">Claude.md</span>와 GitHub —<br><span class="serif">기준과 이력을 남기는 법</span></h1>
     <p class="lead">AI로 모델 작업을 할 때 <b>꼭 함께 써야 하는 두 가지</b>. 기준은 메모장으로, 과정은 보관소로.</p>
   </div>
@@ -1951,7 +1941,6 @@
 <!-- ══════════ 22 Roles ══════════ -->
 <section class="slide" data-screen-label="22 Roles">
   <div class="head">
-    <div class="eyebrow">Roles · 역할 분담</div>
     <h1 class="title">AI는 반복과 정량 검토,<br><span class="serif">사람은 판단과 결정</span></h1>
     <p class="lead"><b>필드맵</b>이 그 예. 추천을 그대로 받지 않고, 사람이 <b>마지막에 다듬도록</b>.</p>
   </div>
@@ -1995,9 +1984,9 @@
     <div class="closing-copy">
       <div class="closing-label"><span class="bar"></span>Closing · 제가 하고 싶은 말</div>
       <div class="closing-accent"><span class="a"></span><span class="b"></span></div>
-      <p class="closing-statement">저는 <b>먼저 시작해봤을 뿐</b>입니다.</p>
-      <p class="closing-statement small"><b>누구나 할 수 있고</b>, 더 좋은 결과도 충분히 만들 수 있습니다.</p>
-      <div class="closing-coda">시간을 조금만 투자하면, <b>직접 만들어보실 수 있습니다</b>.</div>
+      <p class="closing-statement">이렇게 <b>한 달 동안 시도해본 내용</b>을<br>공유드렸습니다.</p>
+      <p class="closing-statement small">저도 아직 시작하는 단계지만,<br><b>하루 한두 시간씩만</b> 투자해보셔도</p>
+      <div class="closing-coda">업무에 <b>충분히 도움이 되실 겁니다</b>.</div>
     </div>
   </div>
   <div class="footer"><div class="l"></div><span class="num">23</span></div>
