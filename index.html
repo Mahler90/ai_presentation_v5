@@ -386,31 +386,13 @@
   .method-v2 .ed-row .ed-side .sv{ font-size:17px; line-height:1.5; color:var(--ink); font-weight:500; }
   .method-v2 .ed-row .ed-side .sv b{ font-weight:700; }
 
-  /* Track A cleanup: centered composition */
-  [data-screen-label$="Track A Trial"],
-  [data-screen-label$="Track A Method"]{
-    justify-content:center;
-  }
-  [data-screen-label$="Track A Trial"] .head,
-  [data-screen-label$="Track A Method"] .head,
-  [data-screen-label$="Track A Inputs"] .head{
-    text-align:center;
-  }
+  /* Track A: head는 기존 슬라이드(좌상단)와 동일, 본문만 중앙 컴포지션 */
   [data-screen-label$="Track A Trial"] .head,
   [data-screen-label$="Track A Method"] .head{
     padding:72px 96px 0;
   }
   [data-screen-label$="Track A Inputs"] .head{
     padding:84px 96px 0 !important;
-  }
-  [data-screen-label$="Track A Trial"] .title,
-  [data-screen-label$="Track A Trial"] .lead,
-  [data-screen-label$="Track A Method"] .title,
-  [data-screen-label$="Track A Method"] .lead,
-  [data-screen-label$="Track A Inputs"] .title,
-  [data-screen-label$="Track A Inputs"] .lead{
-    margin-left:auto;
-    margin-right:auto;
   }
   [data-screen-label$="Track A Trial"] .title,
   [data-screen-label$="Track A Method"] .title{
