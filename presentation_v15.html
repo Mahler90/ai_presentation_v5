@@ -386,6 +386,87 @@
   .method-v2 .ed-row .ed-side .sv{ font-size:17px; line-height:1.5; color:var(--ink); font-weight:500; }
   .method-v2 .ed-row .ed-side .sv b{ font-weight:700; }
 
+  /* Track A cleanup: centered composition */
+  [data-screen-label$="Track A Trial"],
+  [data-screen-label$="Track A Method"]{
+    justify-content:center;
+  }
+  [data-screen-label$="Track A Trial"] .head,
+  [data-screen-label$="Track A Method"] .head,
+  [data-screen-label$="Track A Inputs"] .head{
+    text-align:center;
+  }
+  [data-screen-label$="Track A Trial"] .head,
+  [data-screen-label$="Track A Method"] .head{
+    padding:72px 96px 0;
+  }
+  [data-screen-label$="Track A Inputs"] .head{
+    padding:84px 96px 0 !important;
+  }
+  [data-screen-label$="Track A Trial"] .title,
+  [data-screen-label$="Track A Trial"] .lead,
+  [data-screen-label$="Track A Method"] .title,
+  [data-screen-label$="Track A Method"] .lead,
+  [data-screen-label$="Track A Inputs"] .title,
+  [data-screen-label$="Track A Inputs"] .lead{
+    margin-left:auto;
+    margin-right:auto;
+  }
+  [data-screen-label$="Track A Trial"] .title,
+  [data-screen-label$="Track A Method"] .title{
+    max-width:1320px;
+  }
+  [data-screen-label$="Track A Trial"] .lead,
+  [data-screen-label$="Track A Method"] .lead{
+    max-width:1040px;
+  }
+  [data-screen-label$="Track A Trial"] .body-v2,
+  [data-screen-label$="Track A Method"] .body-v2{
+    width:100%;
+    display:flex;
+    justify-content:center;
+  }
+  [data-screen-label$="Track A Trial"] .method-v2,
+  [data-screen-label$="Track A Method"] .method-v2{
+    width:100%;
+    max-width:1440px;
+    flex:0 0 auto;
+    padding:30px 0 0;
+  }
+  [data-screen-label$="Track A Trial"] .method-v2 .ed-row,
+  [data-screen-label$="Track A Method"] .method-v2 .ed-row{
+    grid-template-columns:150px minmax(0,1fr) 360px;
+    gap:42px;
+    padding:32px 0;
+  }
+  [data-screen-label$="Track A Trial"] .method-v2 .ed-row .huge,
+  [data-screen-label$="Track A Method"] .method-v2 .ed-row .huge{
+    width:150px;
+    text-align:center;
+    font-size:168px;
+  }
+  [data-screen-label$="Track A Trial"] .method-v2 .ed-row .lede,
+  [data-screen-label$="Track A Method"] .method-v2 .ed-row .lede{
+    max-width:720px;
+  }
+  [data-screen-label$="Track A Inputs"] .body{
+    padding:40px 96px 72px;
+    justify-content:center;
+  }
+  [data-screen-label$="Track A Inputs"] .inputs-v4{
+    width:100%;
+    max-width:1440px;
+    margin:0 auto;
+    flex:0 0 auto;
+    padding:0;
+    grid-template-columns:minmax(0,1fr) 80px minmax(0,.95fr);
+    align-items:center;
+  }
+  [data-screen-label$="Track A Inputs"] .inputs-v4 .v4-card{
+    flex:0 0 auto;
+    padding:20px 22px 20px 0;
+  }
+
   /* ========== 05 Track A Trial · 시행착오 (수동 / Claude 학습) ========== */
   .trial-grid{
     flex:1; min-height:0;
@@ -949,15 +1030,15 @@
   [data-screen-label="04 Journey"][data-deck-active] .journey-timeline{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 1.10s both; }
 
   /* ── 05 Track A Trial · 두 패널 (수동 → Claude 학습) ── */
-  [data-screen-label="Track A Trial"][data-deck-active] .trial-panel:nth-child(1){ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .80s both; }
-  [data-screen-label="Track A Trial"][data-deck-active] .trial-panel:nth-child(2){ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 1.05s both; }
+  [data-screen-label$="Track A Trial"][data-deck-active] .ed-row.a{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .80s both; }
+  [data-screen-label$="Track A Trial"][data-deck-active] .ed-row.b{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 1.05s both; }
 
   /* ── 06 Track A Method · row A → B ── */
-  [data-screen-label="06 Track A Method"][data-deck-active] .ed-row.a{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .80s both; }
-  [data-screen-label="06 Track A Method"][data-deck-active] .ed-row.b{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 1.05s both; }
+  [data-screen-label$="Track A Method"][data-deck-active] .ed-row.a{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .80s both; }
+  [data-screen-label$="Track A Method"][data-deck-active] .ed-row.b{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) 1.05s both; }
 
   /* ── 06 Track A Inputs · 좌(입력 카드 3) + 가운데(브래킷) + 우(출력) 한꺼번에 ── */
-  [data-screen-label="06 Track A Inputs"][data-deck-active] .inputs-v4 > *{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .85s both; }
+  [data-screen-label$="Track A Inputs"][data-deck-active] .inputs-v4 > *{ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .85s both; }
 
   /* ── 20 Tips 1 · 패널 1 → 2 (안에 op-compare 는 같이 페이드) ── */
   [data-screen-label="20 Tips 1"][data-deck-active] .tips1-layout .ops-panel:nth-child(1){ animation: ovFadeUp .55s cubic-bezier(.2,.7,.2,1) .85s both; }
@@ -1271,30 +1352,31 @@
     <h1 class="title">자리잡기까지의 <span class="serif">시행착오</span></h1>
     <p class="lead">법규 안에서 어색하지 않은 배치 — 사람도, AI도 <b>익숙해지기까지 시간</b>이 필요.</p>
   </div>
-  <div class="body">
-    <div class="trial-grid">
-      <div class="trial-panel">
-        <div class="trial-tag"><span class="trial-k">기존</span><span class="trial-sep"></span>수동 배치</div>
-        <h3 class="trial-h">사람이 직접<br><span class="em">밸런스를 맞추기까지</span></h3>
-        <div class="trial-flow">
-          <span class="ts">지적도</span><span class="ta">→</span>
-          <span class="ts">법규</span><span class="ta">→</span>
-          <span class="ts">개요</span><span class="ta">→</span>
-          <span class="ts em">직접 배치</span>
+  <div class="body-v2">
+    <div class="method-v2">
+      <div class="ed-row a" data-step="1">
+        <div class="huge">A</div>
+        <div class="ed-main">
+          <div class="tag"><span class="tag-k">기존</span><span class="sep"></span>수동 배치</div>
+          <h3 class="flow"><span class="step">지적도</span><span class="arrow">→</span><span class="step">법규</span><span class="arrow">→</span><span class="step">개요</span><span class="arrow">→</span><span class="step em">직접 배치</span></h3>
+          <p class="lede">사람이 직접 <b>밸런스를 맞추기까지</b> — 법규 안에서 동수·세대수 최대, 어색하지 않은 배치까지 반복.</p>
         </div>
-        <p class="trial-lede">법규 안에서 동수·세대수 최대, <b>어색하지 않은 배치</b>까지 사람의 반복.</p>
-        <div class="trial-friction"><b>오래 걸림</b> — 검토 한 바퀴에 며칠 단위.</div>
+        <div class="ed-side">
+          <div class="sitem"><div class="sk">검토</div><div class="sv">한 바퀴에 <b>며칠 단위</b></div></div>
+          <div class="sitem"><div class="sk">병목</div><div class="sv">사람의 반복 — 시간 소모</div></div>
+        </div>
       </div>
-      <div class="trial-panel">
-        <div class="trial-tag"><span class="trial-k">Claude</span><span class="trial-sep"></span>학습 단계</div>
-        <h3 class="trial-h">AI도 같은 결과까지<br><span class="em">시행착오의 시간</span></h3>
-        <div class="trial-flow">
-          <span class="ts">과거 대지 학습</span><span class="ta">→</span>
-          <span class="ts">시도</span><span class="ta">→</span>
-          <span class="ts em">재시도</span>
+      <div class="ed-row b" data-step="2">
+        <div class="huge">B</div>
+        <div class="ed-main">
+          <div class="tag"><span class="tag-k">Claude</span><span class="sep"></span>학습 단계</div>
+          <h3 class="flow"><span class="step">과거 대지 학습</span><span class="arrow">→</span><span class="step">시도</span><span class="arrow">→</span><span class="step em">재시도</span></h3>
+          <p class="lede">AI도 같은 결과까지 <b>시행착오의 시간</b> — 다양한 대지를 학습시키고 밸런스 있는 결과까지 반복.</p>
         </div>
-        <p class="trial-lede">다양한 대지의 배치를 학습시키고, <b>밸런스 있는 결과</b>까지 시행착오 반복.</p>
-        <div class="trial-friction"><b>같은 조건에도 결과가 매번 다름</b> — 기준 정리가 필수.</div>
+        <div class="ed-side">
+          <div class="sitem"><div class="sk">학습</div><div class="sv">다양한 과거 대지의 배치 사례</div></div>
+          <div class="sitem"><div class="sk">병목</div><div class="sv"><b>결과가 매번 다름</b> — 기준 정리 필수</div></div>
+        </div>
       </div>
     </div>
   </div>
