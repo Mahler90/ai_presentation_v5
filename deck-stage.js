@@ -301,6 +301,9 @@
       this._mouseIdleTimer = null;
       this._laserOn = false;
       this._laserDot = null;
+      // 슬라이드 내부 항목 강조 단계 (페이지 넘김으로 1, 2, 3 ... 진행).
+      // 0이면 슬라이드의 전체 항목이 동일하게 표시(초기 상태).
+      this._currentStep = 0;
       this._storageKey = STORAGE_PREFIX + (location.pathname || '/');
 
       this._onKey = this._onKey.bind(this);
@@ -519,7 +522,10 @@
       this._slides.forEach((s, i) => {
         if (i === curr) s.setAttribute('data-deck-active', '');
         else s.removeAttribute('data-deck-active');
+        // 슬라이드 간 이동 시 단계 강조 속성 제거 — 새 슬라이드는 초기 상태로 진입
+        s.removeAttribute('data-active-step');
       });
+      this._currentStep = 0;
       if (this._countEl) this._countEl.textContent = String(curr + 1);
       this._persistIndex();
 
@@ -629,9 +635,9 @@
       let handled = true;
 
       if (key === 'ArrowRight' || key === 'PageDown' || key === ' ' || key === 'Spacebar') {
-        this._go(this._index + 1, 'keyboard');
+        this._stepOrAdvance(1);
       } else if (key === 'ArrowLeft' || key === 'PageUp') {
-        this._go(this._index - 1, 'keyboard');
+        this._stepOrAdvance(-1);
       } else if (key === 'Home') {
         this._go(0, 'keyboard');
       } else if (key === 'End') {
@@ -655,6 +661,56 @@
       if (handled) {
         e.preventDefault();
         this._flashOverlay();
+      }
+    }
+
+    /**
+     * 슬라이드 내부 항목의 강조 단계를 진행하거나, 단계가 끝나면 슬라이드를 이동.
+     * dir > 0: 다음 단계 → 마지막 단계까지 갔으면 다음 슬라이드로
+     * dir < 0: 이전 단계 → 단계가 0이면 이전 슬라이드로
+     * 슬라이드에 [data-step] 자식이 없으면 곧장 슬라이드 이동(기존 동작과 동일).
+     */
+    _stepOrAdvance(dir) {
+      if (!this._slides.length) return;
+      const slide = this._slides[this._index];
+      const max = this._maxStepForSlide(slide);
+      if (dir > 0) {
+        if (this._currentStep < max) {
+          this._applyStep(this._currentStep + 1);
+        } else {
+          this._go(this._index + 1, 'keyboard');
+        }
+      } else {
+        if (this._currentStep > 0) {
+          this._applyStep(this._currentStep - 1);
+        } else {
+          this._go(this._index - 1, 'keyboard');
+        }
+      }
+    }
+
+    /** 슬라이드 안에 있는 [data-step] 자식들의 최댓값. 없으면 0. */
+    _maxStepForSlide(slide) {
+      if (!slide) return 0;
+      let max = 0;
+      const items = slide.querySelectorAll('[data-step]');
+      items.forEach((el) => {
+        const n = parseInt(el.getAttribute('data-step'), 10);
+        if (Number.isFinite(n) && n > max) max = n;
+      });
+      return max;
+    }
+
+    /** 현재 슬라이드의 강조 단계 적용. step<=0이면 속성 제거(전체 표시). */
+    _applyStep(step) {
+      const slide = this._slides[this._index];
+      if (!slide) return;
+      if (step <= 0) {
+        slide.removeAttribute('data-active-step');
+        this._currentStep = 0;
+      } else {
+        slide.setAttribute('data-active-step', String(step));
+        this._currentStep = step;
       }
     }
 
