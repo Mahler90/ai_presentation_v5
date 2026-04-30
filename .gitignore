@@ -12,3 +12,9 @@ desktop.ini
 archive/
 *.bak
 * - 복사본.html
+
+# Old internal versions / scripts — 로컬 전용, 공개 배포 레포엔 안 올림
+presentation_v*.html
+presentation_v*_script_final*
+발표시나리오*.pdf
+assets/bandicam*.mp4
